@@ -1,0 +1,11 @@
+[gd_resource type="GradientTexture2D" load_steps=2 format=3 uid="uid://qcqs2jqpy3ir"]
+
+[sub_resource type="Gradient" id="Gradient_yarsy"]
+offsets = PackedFloat32Array(0, 0.146341, 0.280488, 0.45935, 0.634146, 0.739837, 0.845528, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.971545, 0.971545, 0.971545, 0.971545, 0.959064, 0.959064, 0.959064, 0.959064, 0.824896, 0.824896, 0.824896, 0.824896, 0.551716, 0.551716, 0.551716, 0.551716, 0.459764, 0.459764, 0.459764, 0.459764, 0.323271, 0.323271, 0.323271, 0.323271, 0, 0, 0, 0)
+
+[resource]
+gradient = SubResource("Gradient_yarsy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.2)

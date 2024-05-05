@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=3 uid="uid://xvdaidu3ustw"]
+
+[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_7pj4r"]
+[ext_resource type="Texture2D" uid="uid://b6cqmvsplyga4" path="res://Resources/Buttons/btn_normal.tres" id="2_icbud"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="2_sysxq"]
+[ext_resource type="Texture2D" uid="uid://ky4h0xu7exk1" path="res://Resources/Buttons/btn_pressed.tres" id="3_g0m1c"]
+[ext_resource type="Texture2D" uid="uid://dybwkmtlu5j5y" path="res://Resources/Buttons/btn_hover.tres" id="4_qongk"]
+
+[sub_resource type="AtlasTexture" id="5"]
+atlas = ExtResource("1_7pj4r")
+region = Rect2(387, 96, 74, 96)
+
+[node name="MenuPausa" type="TextureRect"]
+texture_filter = 1
+offset_right = 74.0
+offset_bottom = 96.0
+texture = SubResource("5")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -22.0
+offset_right = -9.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="opciones_btn" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_icbud")
+texture_pressed = ExtResource("3_g0m1c")
+texture_hover = ExtResource("4_qongk")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/opciones_btn"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -3.0
+offset_right = 43.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(1, 0.631373, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("2_sysxq")
+text = "OPCIONES"
+
+[node name="menuPrincipal_btn" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_icbud")
+texture_pressed = ExtResource("3_g0m1c")
+texture_hover = ExtResource("4_qongk")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/menuPrincipal_btn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -9.0
+offset_right = 12.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.631373, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("2_sysxq")
+text = "TITULO"
+
+[node name="salir_btn" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_icbud")
+texture_pressed = ExtResource("3_g0m1c")
+texture_hover = ExtResource("4_qongk")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/salir_btn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -9.0
+offset_right = 10.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.631373, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("2_sysxq")
+text = "SALIR"
+
+[node name="reanudar_btn" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_icbud")
+texture_pressed = ExtResource("3_g0m1c")
+texture_hover = ExtResource("4_qongk")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/reanudar_btn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -9.0
+offset_right = 16.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.631373, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("2_sysxq")
+text = "REANUDAR"

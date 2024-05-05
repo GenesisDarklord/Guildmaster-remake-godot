@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://iu5cqliqvw6d"]
+
+[ext_resource type="Script" path="res://Scripts/DEBUG/SystemConsole.gd" id="1_ki8t8"]
+
+[node name="SystemConsole" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ki8t8")
+
+[node name="text" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 494.0
+offset_bottom = 37.0
+placeholder_text = "Console..."

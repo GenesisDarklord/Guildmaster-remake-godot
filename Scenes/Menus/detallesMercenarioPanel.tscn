@@ -1,0 +1,195 @@
+[gd_scene load_steps=9 format=3 uid="uid://cq70bflqf02r"]
+
+[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_4q8h5"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="2_2t3kq"]
+[ext_resource type="Script" path="res://Scripts/detallesMercenarioPanel.gd" id="2_eiked"]
+[ext_resource type="PackedScene" uid="uid://cib2biql2wbek" path="res://Scenes/mercenary.tscn" id="4_7nd40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjd1y"]
+atlas = ExtResource("1_4q8h5")
+region = Rect2(1024, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckof5"]
+atlas = ExtResource("1_4q8h5")
+region = Rect2(963, 265, 50, 4)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uo51x"]
+load_path = "res://.godot/imported/equipment.png-0e8e6a53c12fd0c33b64989ccd5619b0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qlejr"]
+load_path = "res://.godot/imported/equipment.png-0e8e6a53c12fd0c33b64989ccd5619b0.ctex"
+
+[node name="detallesMercenarioPanel" type="TextureRect" groups=["detallesMercenarioPanel"]]
+texture_filter = 1
+anchors_preset = -1
+anchor_top = 0.274
+anchor_right = 0.256
+anchor_bottom = 0.274
+offset_top = -95.9
+offset_bottom = 96.1
+texture = SubResource("AtlasTexture_wjd1y")
+stretch_mode = 3
+script = ExtResource("2_eiked")
+
+[node name="nombre_text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -87.0
+offset_right = -11.0
+offset_bottom = -71.0
+theme_override_colors/font_color = Color(0.439216, 0.12549, 0, 1)
+theme_override_fonts/font = ExtResource("2_2t3kq")
+text = "AAAAAAAAAAAAAAAAAAAAAAAA"
+horizontal_alignment = 1
+
+[node name="rango_text" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = -53.0
+offset_right = -62.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.678431, 0.211765, 0.027451, 1)
+theme_override_fonts/normal_font = ExtResource("2_2t3kq")
+text = "99"
+fit_content = true
+scroll_active = false
+
+[node name="ataque_text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 21.0
+offset_top = -65.0
+offset_right = -94.0
+offset_bottom = -49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2t3kq")
+text = "999"
+
+[node name="defensa_text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 21.0
+offset_top = -53.0
+offset_right = -94.0
+offset_bottom = -37.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2t3kq")
+text = "999"
+
+[node name="XP_text" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 79.0
+offset_top = -64.0
+offset_right = -41.0
+offset_bottom = -48.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2t3kq")
+text = "99"
+
+[node name="XP_bar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 59.0
+offset_top = -58.0
+offset_right = -19.0
+offset_bottom = -54.0
+value = 50.0
+rounded = true
+nine_patch_stretch = true
+texture_progress = SubResource("AtlasTexture_ckof5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mercenary" parent="Control" instance=ExtResource("4_7nd40")]
+position = Vector2(78, 131)
+scale = Vector2(1.89075, 1.91083)
+script = null
+
+[node name="AnimatedSprite2D" parent="Control/mercenary" index="0"]
+frame_progress = 0.0166641
+
+[node name="equipment" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="weapon_btn" type="TextureButton" parent="equipment"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -34.0
+offset_right = -91.0
+offset_bottom = -8.0
+
+[node name="weapon_icon" type="Sprite2D" parent="equipment/weapon_btn"]
+visible = false
+position = Vector2(13, 13)
+scale = Vector2(0.958333, 0.958333)
+texture = SubResource("CompressedTexture2D_uo51x")
+hframes = 4
+vframes = 3
+frame = 8
+
+[node name="armor_btn" type="TextureButton" parent="equipment"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -2.0
+offset_right = -91.0
+offset_bottom = 24.0
+
+[node name="armor_icon" type="Sprite2D" parent="equipment/armor_btn"]
+visible = false
+position = Vector2(13, 13)
+scale = Vector2(0.958333, 0.958333)
+texture = SubResource("CompressedTexture2D_qlejr")
+hframes = 4
+vframes = 3
+frame = 11
+
+[connection signal="pressed" from="equipment/weapon_btn" to="." method="_on_weapon_btn_pressed"]
+[connection signal="pressed" from="equipment/armor_btn" to="." method="_on_armor_btn_pressed"]
+
+[editable path="Control/mercenary"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b2r1f684dog61"
+path="res://.godot/imported/4 Battle Track LOOP TomMusic.ogg-397c0df0ffffdd0b2a49df67caa8c96d.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/4 Battle Track LOOP TomMusic.ogg"
+dest_files=["res://.godot/imported/4 Battle Track LOOP TomMusic.ogg-397c0df0ffffdd0b2a49df67caa8c96d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

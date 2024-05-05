@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://g5l8lb6voko4"]
+
+[node name="progressPath" type="PathFollow2D"]
+rotates = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+
+[node name="126516" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

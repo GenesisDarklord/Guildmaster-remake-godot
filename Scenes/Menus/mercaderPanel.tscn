@@ -1,0 +1,134 @@
+[gd_scene load_steps=10 format=3 uid="uid://ds272tlyjsdor"]
+
+[ext_resource type="Script" path="res://Scripts/mercaderPanel.gd" id="1_citvs"]
+[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_vf407"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="2_o0n4y"]
+[ext_resource type="Script" path="res://Scripts/objetoTienda.gd" id="3_6afsk"]
+[ext_resource type="Texture2D" uid="uid://cmxyabydxfvaq" path="res://NewSprites/materials.png" id="4_v2k7c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulr5t"]
+atlas = ExtResource("1_vf407")
+region = Rect2(1024, 304, 176, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amywm"]
+atlas = ExtResource("1_vf407")
+region = Rect2(1216, 321, 30, 33)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6mqkt"]
+load_path = "res://.godot/imported/equipment.png-0e8e6a53c12fd0c33b64989ccd5619b0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jkrd"]
+atlas = ExtResource("1_vf407")
+region = Rect2(981, 344, 20, 9)
+
+[node name="mercaderPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_citvs")
+
+[node name="cerrar" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 198.0
+offset_right = 346.0
+offset_bottom = 310.0
+texture = SubResource("AtlasTexture_ulr5t")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="background"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 21.0
+offset_right = 159.0
+offset_bottom = 89.0
+
+[node name="GridContainer" type="GridContainer" parent="background/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="objetoTienda" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 188.0
+offset_top = 219.0
+offset_right = 218.0
+offset_bottom = 249.0
+size_flags_stretch_ratio = 0.0
+texture = SubResource("AtlasTexture_amywm")
+stretch_mode = 2
+script = ExtResource("3_6afsk")
+
+[node name="sprite" type="Control" parent="objetoTienda"]
+layout_mode = 1
+anchor_right = 0.9
+offset_left = 3.0
+offset_top = 2.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="imageObject" type="Sprite2D" parent="objetoTienda/sprite"]
+position = Vector2(12, 12)
+texture = ExtResource("4_v2k7c")
+hframes = 5
+vframes = 2
+
+[node name="imageEquipment" type="Sprite2D" parent="objetoTienda/sprite"]
+position = Vector2(12, 12)
+scale = Vector2(0.958333, 0.958333)
+texture = SubResource("CompressedTexture2D_6mqkt")
+hframes = 4
+vframes = 3
+frame = 8
+
+[node name="precio_bg" type="TextureRect" parent="objetoTienda"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 22.5
+offset_right = -5.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8jkrd")
+stretch_mode = 2
+
+[node name="precio" type="Label" parent="objetoTienda"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 19.0
+offset_right = -8.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o0n4y")
+text = "999"
+
+[node name="clickDetection" type="TextureButton" parent="objetoTienda"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.059
+anchor_right = 1.0
+anchor_bottom = 0.059
+offset_top = -0.00600004
+offset_bottom = 31.994
+
+[connection signal="pressed" from="cerrar" to="." method="cerrarMercaderPanel"]
+[connection signal="objeto_presionado" from="objetoTienda" to="." method="comprarObjeto"]
+[connection signal="pressed" from="objetoTienda/clickDetection" to="objetoTienda" method="objetoPresionado"]

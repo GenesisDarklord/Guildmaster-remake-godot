@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca2x5kt1k1asf"]
+
+[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_627ae"]
+[ext_resource type="Script" path="res://Scripts/MisionTemplate.gd" id="2"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="3_jwu5r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e7ya"]
+atlas = ExtResource("1_627ae")
+region = Rect2(1152, 224, 112, 32)
+
+[node name="misionTemplate" type="TextureButton"]
+texture_filter = 1
+offset_right = 112.0
+offset_bottom = 32.0
+texture_normal = SubResource("AtlasTexture_8e7ya")
+script = ExtResource("2")
+
+[node name="nombre_text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 100.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jwu5r")
+text = "Nombre mision"
+horizontal_alignment = 1
+
+[node name="recompensa_text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 71.0
+offset_top = -3.0
+offset_right = 114.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jwu5r")
+text = "Recompensa"
+horizontal_alignment = 1
+
+[node name="enCurso_text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 43.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jwu5r")
+text = "en curso"
+
+[node name="diasRestantes" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 2.0
+offset_right = 58.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jwu5r")
+text = "99"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

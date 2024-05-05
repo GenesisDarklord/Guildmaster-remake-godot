@@ -1,0 +1,363 @@
+[gd_scene load_steps=12 format=3 uid="uid://dwdnssvfqevwt"]
+
+[ext_resource type="Script" path="res://Scripts/herrerriaPanel.gd" id="1_8btn2"]
+[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_qe1q1"]
+[ext_resource type="Texture2D" uid="uid://cmxyabydxfvaq" path="res://NewSprites/materials.png" id="2_28wma"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="3_pjggd"]
+[ext_resource type="PackedScene" uid="uid://yljer0xubbx3" path="res://Scenes/buttons/btn_default.tscn" id="5_l2cmk"]
+[ext_resource type="Script" path="res://Scripts/almacenPanel.gd" id="6_riee5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otni5"]
+atlas = ExtResource("1_qe1q1")
+region = Rect2(1200, 304, 176, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm7fw"]
+atlas = ExtResource("1_qe1q1")
+region = Rect2(1216, 321, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjrdu"]
+atlas = ExtResource("1_qe1q1")
+region = Rect2(981, 344, 20, 9)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g1tji"]
+load_path = "res://.godot/imported/equipment.png-0e8e6a53c12fd0c33b64989ccd5619b0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t065"]
+atlas = ExtResource("1_qe1q1")
+region = Rect2(464, 0, 144, 218)
+
+[node name="herrerriaPanel" type="Control" node_paths=PackedStringArray("almacen")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8btn2")
+almacen = NodePath("almacenPanel")
+
+[node name="cerrar" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="craftPanel_bg" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = 62.0
+offset_right = 89.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_otni5")
+
+[node name="material1" type="TextureRect" parent="craftPanel_bg"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 46.0
+offset_bottom = 47.0
+texture = SubResource("AtlasTexture_lm7fw")
+
+[node name="sprite" type="Control" parent="craftPanel_bg/material1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="imageObject" type="Sprite2D" parent="craftPanel_bg/material1/sprite"]
+position = Vector2(12, 12)
+texture = ExtResource("2_28wma")
+hframes = 5
+vframes = 2
+frame = 4
+
+[node name="cant" type="TextureRect" parent="craftPanel_bg/material1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_bjrdu")
+
+[node name="cant_label" type="Label" parent="craftPanel_bg/material1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 5.5
+offset_right = 5.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_pjggd")
+text = "99"
+
+[node name="material2" type="TextureRect" parent="craftPanel_bg"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 17.0
+offset_right = 79.0
+offset_bottom = 47.0
+texture = SubResource("AtlasTexture_lm7fw")
+
+[node name="sprite" type="Control" parent="craftPanel_bg/material2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="imageObject" type="Sprite2D" parent="craftPanel_bg/material2/sprite"]
+position = Vector2(12, 12)
+texture = ExtResource("2_28wma")
+hframes = 5
+vframes = 2
+
+[node name="cant" type="TextureRect" parent="craftPanel_bg/material2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_bjrdu")
+
+[node name="cant_label" type="Label" parent="craftPanel_bg/material2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 5.5
+offset_right = 5.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_pjggd")
+text = "99"
+
+[node name="material3" type="TextureRect" parent="craftPanel_bg"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 17.0
+offset_right = 112.0
+offset_bottom = 47.0
+texture = SubResource("AtlasTexture_lm7fw")
+
+[node name="sprite" type="Control" parent="craftPanel_bg/material3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="imageObject" type="Sprite2D" parent="craftPanel_bg/material3/sprite"]
+position = Vector2(12, 12)
+texture = ExtResource("2_28wma")
+hframes = 5
+vframes = 2
+
+[node name="cant" type="TextureRect" parent="craftPanel_bg/material3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_bjrdu")
+
+[node name="cant_label" type="Label" parent="craftPanel_bg/material3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 5.5
+offset_right = 5.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_pjggd")
+text = "99"
+
+[node name="resultado" type="TextureRect" parent="craftPanel_bg"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 16.0
+offset_right = 160.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_lm7fw")
+
+[node name="sprite" type="Control" parent="craftPanel_bg/resultado"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="imageObject" type="Sprite2D" parent="craftPanel_bg/resultado/sprite"]
+position = Vector2(12, 12)
+texture = ExtResource("2_28wma")
+hframes = 5
+vframes = 2
+
+[node name="imageEquipment" type="Sprite2D" parent="craftPanel_bg/resultado/sprite"]
+position = Vector2(12, 12)
+scale = Vector2(0.958333, 0.958333)
+texture = SubResource("CompressedTexture2D_g1tji")
+hframes = 4
+vframes = 3
+frame = 8
+
+[node name="cant" type="TextureRect" parent="craftPanel_bg/resultado"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_bjrdu")
+
+[node name="cant_label" type="Label" parent="craftPanel_bg/resultado"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 5.5
+offset_right = 5.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_pjggd")
+text = "99"
+
+[node name="craftear" parent="craftPanel_bg" instance=ExtResource("5_l2cmk")]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 67.0
+offset_right = 112.0
+offset_bottom = 79.0
+
+[node name="Label" type="Label" parent="craftPanel_bg/craftear"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.631373, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("3_pjggd")
+text = "CREAR"
+horizontal_alignment = 1
+
+[node name="almacenPanel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.311
+anchor_right = 0.288
+anchor_bottom = 0.311
+offset_left = 178.0
+offset_top = -92.85
+offset_right = 178.0
+offset_bottom = 125.15
+texture = SubResource("AtlasTexture_1t065")
+stretch_mode = 3
+script = ExtResource("6_riee5")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="almacenPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.53
+anchor_right = 1.0
+anchor_bottom = 0.53
+offset_left = 16.0
+offset_top = -92.54
+offset_right = -13.0
+offset_bottom = 92.46
+
+[node name="VBoxContainer" type="VBoxContainer" parent="almacenPanel/ScrollContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="cerrar" to="." method="cerrarHerreriaPanel"]
+[connection signal="pressed" from="craftPanel_bg/craftear" to="." method="craftearItem"]
+[connection signal="recetaPresionada" from="almacenPanel" to="." method="recetaPresionada"]

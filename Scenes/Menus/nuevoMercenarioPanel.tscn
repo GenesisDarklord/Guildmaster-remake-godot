@@ -1,0 +1,262 @@
+[gd_scene load_steps=32 format=3]
+
+[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_hfp8k"]
+[ext_resource type="Script" path="res://Scripts/nuevoMercenarioPanel.gd" id="2_lw7hg"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="3_4gyqh"]
+[ext_resource type="PackedScene" uid="uid://yljer0xubbx3" path="res://Scenes/buttons/btn_default.tscn" id="4_phjqx"]
+[ext_resource type="Texture2D" uid="uid://vmrtwy5rutg6" path="res://NewSprites/Rahars/walk/walk_down1.png" id="5_2l64b"]
+[ext_resource type="Texture2D" uid="uid://dpoaxexq7p0xq" path="res://NewSprites/Rahars/walk/walk_down2.png" id="6_pl5uh"]
+[ext_resource type="Texture2D" uid="uid://bjah7ishklo43" path="res://NewSprites/Rahars/walk/walk_down3.png" id="7_fiy08"]
+[ext_resource type="Texture2D" uid="uid://divv6qh044nrn" path="res://NewSprites/Rahars/walk/walk_down4.png" id="8_c1yam"]
+[ext_resource type="Texture2D" uid="uid://bwgdkj0argkp4" path="res://NewSprites/Rahars/walk/walk_down5.png" id="9_kkuf6"]
+[ext_resource type="Texture2D" uid="uid://2k6i512e4ki5" path="res://NewSprites/Rahars/walk/walk_down6.png" id="10_fuing"]
+[ext_resource type="Texture2D" uid="uid://by0j3cwi586r4" path="res://NewSprites/Rahars/walk/walk_down7.png" id="11_daddf"]
+[ext_resource type="Texture2D" uid="uid://dq83vpqxnq4ut" path="res://NewSprites/Rahars/walk/walk_down8.png" id="12_jk7gs"]
+[ext_resource type="Texture2D" uid="uid://dxg6c0j4b05la" path="res://NewSprites/Rahars/walk/walk_right1.png" id="13_d3ywn"]
+[ext_resource type="Texture2D" uid="uid://dfts5aq51ku50" path="res://NewSprites/Rahars/walk/walk_right2.png" id="14_lop80"]
+[ext_resource type="Texture2D" uid="uid://cgw1ic57fe0np" path="res://NewSprites/Rahars/walk/walk_right3.png" id="15_v2bjq"]
+[ext_resource type="Texture2D" uid="uid://bgmck0ht344nj" path="res://NewSprites/Rahars/walk/walk_right4.png" id="16_ckqpr"]
+[ext_resource type="Texture2D" uid="uid://b0vmic3x06jst" path="res://NewSprites/Rahars/walk/walk_right5.png" id="17_ecrgq"]
+[ext_resource type="Texture2D" uid="uid://dyapkh67j6b2y" path="res://NewSprites/Rahars/walk/walk_right6.png" id="18_oaxlv"]
+[ext_resource type="Texture2D" uid="uid://dm8pksysvhvhc" path="res://NewSprites/Rahars/walk/walk_right7.png" id="19_80rlv"]
+[ext_resource type="Texture2D" uid="uid://biyju0ecgu7m6" path="res://NewSprites/Rahars/walk/walk_right8.png" id="20_dnssi"]
+[ext_resource type="Texture2D" uid="uid://c5y7nn1cub0ds" path="res://NewSprites/Rahars/walk/walk_up1.png" id="21_oru1b"]
+[ext_resource type="Texture2D" uid="uid://crq3pvcgmqqud" path="res://NewSprites/Rahars/walk/walk_up2.png" id="22_jddn5"]
+[ext_resource type="Texture2D" uid="uid://ctm2p0nl0fd0w" path="res://NewSprites/Rahars/walk/walk_up3.png" id="23_rl2lg"]
+[ext_resource type="Texture2D" uid="uid://dq6rf61mlhvr2" path="res://NewSprites/Rahars/walk/walk_up4.png" id="24_auo30"]
+[ext_resource type="Texture2D" uid="uid://brxqcdv53y11p" path="res://NewSprites/Rahars/walk/walk_up5.png" id="25_4m3jl"]
+[ext_resource type="Texture2D" uid="uid://bxmdbtq1op5km" path="res://NewSprites/Rahars/walk/walk_up6.png" id="26_024cj"]
+[ext_resource type="Texture2D" uid="uid://dytpgwqwe0msc" path="res://NewSprites/Rahars/walk/walk_up7.png" id="27_edtyk"]
+[ext_resource type="Texture2D" uid="uid://bgfg70m7m608d" path="res://NewSprites/Rahars/walk/walk_up8.png" id="28_r5hcb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6swjh"]
+atlas = ExtResource("1_hfp8k")
+region = Rect2(1024, 0, 128, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2ccc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2l64b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2l64b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pl5uh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fiy08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c1yam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kkuf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fuing")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_daddf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jk7gs")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_d3ywn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lop80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_v2bjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ckqpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ecrgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oaxlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_80rlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dnssi")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_oru1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jddn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_rl2lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_auo30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_4m3jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_024cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_edtyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_r5hcb")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 8.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t8rok"]
+polygon = PackedVector2Array(-6, 14, 6, 14, 6, 19, -6, 19)
+
+[node name="nuevoMercenarioPanel" type="TextureRect"]
+texture_filter = 1
+anchors_preset = -1
+anchor_top = 0.274
+anchor_right = 0.256
+anchor_bottom = 0.274
+offset_top = -95.9
+offset_bottom = 96.1
+texture = SubResource("AtlasTexture_6swjh")
+stretch_mode = 3
+script = ExtResource("2_lw7hg")
+
+[node name="nombre_text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -87.0
+offset_right = -14.0
+offset_bottom = -71.0
+theme_override_colors/font_color = Color(0.439216, 0.12549, 0, 1)
+theme_override_fonts/font = ExtResource("3_4gyqh")
+text = "AAAAAAAAAAAAAAAAA"
+horizontal_alignment = 1
+
+[node name="rango_text" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 57.0
+offset_top = -53.0
+offset_right = -63.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.678431, 0.211765, 0.027451, 1)
+theme_override_fonts/normal_font = ExtResource("3_4gyqh")
+text = "99"
+fit_content = true
+scroll_active = false
+
+[node name="ataque_text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -65.0
+offset_right = -96.0
+offset_bottom = -49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4gyqh")
+text = "999"
+
+[node name="defensa_text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -53.0
+offset_right = -96.0
+offset_bottom = -37.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4gyqh")
+text = "999"
+
+[node name="reclutar_btn" parent="." instance=ExtResource("4_phjqx")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 43.0
+offset_top = 103.0
+offset_right = -37.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="reclutar_btn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.607843, 0.290196, 1)
+theme_override_fonts/font = ExtResource("3_4gyqh")
+text = "RECLUTAR"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mercenary" type="Node2D" parent="Control" groups=["mercenary"]]
+position = Vector2(78, 131)
+scale = Vector2(1.89075, 1.91083)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/mercenary"]
+position = Vector2(-4, 0)
+sprite_frames = SubResource("SpriteFrames_c2ccc")
+animation = &"walk_down"
+frame = 3
+frame_progress = 0.637763
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Control/mercenary"]
+occluder = SubResource("OccluderPolygon2D_t8rok")
+
+[connection signal="pressed" from="reclutar_btn" to="." method="_on_reclutar_btn_pressed"]
+
+[editable path="reclutar_btn"]

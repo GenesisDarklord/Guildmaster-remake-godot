@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://gjwio6frbf13"]
+
+[sub_resource type="Curve2D" id="Curve2D_nsmvh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -194, 784, 0, 0, 0, 0, -194, 571, 0, 0, 0, 0, -452, 571, 0, 0, 0, 0, -453, 452)
+}
+point_count = 4
+
+[node name="nuevaMision" type="Path2D" groups=["nuevaMisionPath"]]
+curve = SubResource("Curve2D_nsmvh")
+
+[node name="porgressPath" type="PathFollow2D" parent="."]
+position = Vector2(-194, 784)
+rotates = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="porgressPath"]
+update_rotation = false
+update_scale = false
+
+[node name="70420" type="Timer" parent="porgressPath"]
+wait_time = 0.2
+one_shot = true

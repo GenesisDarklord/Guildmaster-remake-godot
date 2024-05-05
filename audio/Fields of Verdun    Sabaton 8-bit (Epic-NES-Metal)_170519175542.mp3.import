@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c35rb0rv2ajsg"
+path="res://.godot/imported/Fields of Verdun    Sabaton 8-bit (Epic-NES-Metal)_170519175542.mp3-0f6f3f7f33542d932d2a1cc4a349b5f6.mp3str"
+
+[deps]
+
+source_file="res://audio/Fields of Verdun    Sabaton 8-bit (Epic-NES-Metal)_170519175542.mp3"
+dest_files=["res://.godot/imported/Fields of Verdun    Sabaton 8-bit (Epic-NES-Metal)_170519175542.mp3-0f6f3f7f33542d932d2a1cc4a349b5f6.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

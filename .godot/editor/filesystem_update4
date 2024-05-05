@@ -1,0 +1,8 @@
+res://Scenes/Menus/mejorasPanel.tscn
+res://Scripts/AutoLoad/Flags.gd
+res://Scripts/mejorasPanel.gd
+res://data/Items.txt
+res://Scenes/Menus/herrerriaPanel.tscn
+res://Scenes/GUI.tscn
+res://Scenes/Pantallas/Gremio.tscn
+res://Scenes/Menus/objetoTemplate.tscn

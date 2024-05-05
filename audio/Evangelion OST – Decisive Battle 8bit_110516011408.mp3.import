@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dktfexl8i18b4"
+path="res://.godot/imported/Evangelion OST – Decisive Battle 8bit_110516011408.mp3-85cf86d37c782dd0e9ef60d9e0a5ffd9.mp3str"
+
+[deps]
+
+source_file="res://audio/Evangelion OST – Decisive Battle 8bit_110516011408.mp3"
+dest_files=["res://.godot/imported/Evangelion OST – Decisive Battle 8bit_110516011408.mp3-85cf86d37c782dd0e9ef60d9e0a5ffd9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

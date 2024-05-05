@@ -1,0 +1,169 @@
+[gd_scene load_steps=13 format=3 uid="uid://bp34r58pkflqd"]
+
+[ext_resource type="Texture2D" uid="uid://wqoaohd5jk8" path="res://Sprites/GUI.png" id="1_iws8c"]
+[ext_resource type="Script" path="res://Scripts/dialogoPanel.gd" id="2_jufmk"]
+[ext_resource type="Texture2D" uid="uid://fko1xje8kuy6" path="res://TEST/cursorDialogo.png" id="3_fpqsj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c63i"]
+atlas = ExtResource("1_iws8c")
+region = Rect2(603.268, 184.971, 15.7323, 16.2157)
+
+[sub_resource type="LabelSettings" id="LabelSettings_trqum"]
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtken"]
+atlas = ExtResource("1_iws8c")
+region = Rect2(388, 52, 96, 32)
+
+[sub_resource type="Animation" id="Animation_1x4te"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texto_text:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_e8fts"]
+resource_name = "mostrarDialogo"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texto_text:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 105]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_71gcn"]
+_data = {
+"RESET": SubResource("Animation_1x4te"),
+"mostrarDialogo": SubResource("Animation_e8fts")
+}
+
+[sub_resource type="Animation" id="Animation_cy1rr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("siguiente_img:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(325, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_kb38u"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("siguiente_img:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(325, 80), Vector2(325, 75), Vector2(325, 75), Vector2(325, 80)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ylmed"]
+_data = {
+"RESET": SubResource("Animation_cy1rr"),
+"idle": SubResource("Animation_kb38u")
+}
+
+[node name="dialogoPanel" type="NinePatchRect" node_paths=PackedStringArray("texto", "nombre", "cursor", "animaciones", "cursorAnimaciones")]
+offset_left = 73.0
+offset_top = 212.0
+offset_right = 422.0
+offset_bottom = 315.0
+pivot_offset = Vector2(246, -95)
+texture = SubResource("AtlasTexture_0c63i")
+patch_margin_left = 4
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+script = ExtResource("2_jufmk")
+velocidad = 0.5
+texto = NodePath("texto_text")
+nombre = NodePath("nombre_label")
+cursor = NodePath("siguiente_img")
+animaciones = NodePath("animations")
+cursorAnimaciones = NodePath("cursorAnimator")
+
+[node name="texto_text" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = -12.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "HOLA"
+scroll_active = false
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="nombre_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -26.0
+offset_right = 36.0
+label_settings = SubResource("LabelSettings_trqum")
+
+[node name="nombre_background" type="NinePatchRect" parent="nombre_label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_mtken")
+patch_margin_left = 11
+patch_margin_top = 9
+patch_margin_right = 12
+patch_margin_bottom = 10
+
+[node name="siguiente_img" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 80.0
+offset_right = 345.0
+offset_bottom = 100.0
+texture = ExtResource("3_fpqsj")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="animations" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_71gcn")
+}
+
+[node name="cursorAnimator" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_ylmed")
+}

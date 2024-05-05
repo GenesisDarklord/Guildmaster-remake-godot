@@ -1,0 +1,1470 @@
+[gd_scene load_steps=58 format=3 uid="uid://b48fupf0uofpp"]
+
+[ext_resource type="Texture2D" uid="uid://wqoaohd5jk8" path="res://Sprites/GUI.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/Gremio.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://bsm3iskov8ogi" path="res://Scenes/GUI.tscn" id="2_wlbvi"]
+[ext_resource type="PackedScene" uid="uid://d0uo8lkeuvogs" path="res://Scenes/Menus/resultadosDeMision.tscn" id="5_nh43h"]
+[ext_resource type="Script" path="res://Scripts/Paths.gd" id="6_agxnq"]
+[ext_resource type="Texture2D" uid="uid://ye8gr7mq74h8" path="res://TEST/bloque_d.png" id="8_a33tw"]
+[ext_resource type="PackedScene" uid="uid://iu5cqliqvw6d" path="res://Scenes/DEBUG/system_console.tscn" id="8_eruwv"]
+[ext_resource type="Shader" path="res://Shaders/new_shader.gdshader" id="9_8idy1"]
+[ext_resource type="Texture2D" uid="uid://dgb5sh3qnfe0r" path="res://TEST/bloque_n.png" id="9_bdclf"]
+[ext_resource type="Texture2D" uid="uid://bbm8l2h1bcmb5" path="res://TEST/KaoraMap_noPiso.png" id="10_gbkbx"]
+[ext_resource type="PackedScene" uid="uid://cfxdcn17mp3wl" path="res://Scenes/FarolLight.tscn" id="11_3bn25"]
+[ext_resource type="Texture2D" uid="uid://bhgen64yxuue6" path="res://TEST/KaoraMap_piso.png" id="11_dq4x4"]
+[ext_resource type="Script" path="res://Scripts/MainCamera.gd" id="14_4xiev"]
+[ext_resource type="Texture2D" uid="uid://back54v38igws" path="res://TEST/Guild.png" id="14_ixk25"]
+[ext_resource type="Texture2D" uid="uid://uowmfbceoyqh" path="res://NewSprites/kirbo prueba.png" id="14_nyi2m"]
+[ext_resource type="Texture2D" uid="uid://cxjm5uxmf6ejo" path="res://TEST/herreria icon.png" id="15_483ir"]
+[ext_resource type="Texture2D" uid="uid://bnswk8cmcfau1" path="res://TEST/genesis.png" id="16_bt8f7"]
+[ext_resource type="Texture2D" uid="uid://fqahxq8qqmwh" path="res://TEST/mercaderCursor.png" id="17_vlfsc"]
+[ext_resource type="AudioStream" uid="uid://sqj0uj3evjw3" path="res://audio/9 Searching Further LOOP TomMusic.ogg" id="20_niusx"]
+[ext_resource type="AudioStream" uid="uid://bg03j876kbnw7" path="res://audio/Light Torch with Starting Loop 1.ogg" id="21_nekcg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yl5b"]
+atlas = ExtResource("1")
+region = Rect2(388, 84, 74, 96)
+
+[sub_resource type="Animation" id="Animation_q3dp0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("resultadosMercenarios:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(247.717, 159)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resultadosMercenarios:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(126, 95.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("resultadosMercenarios/misionCumplidaFallida_label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("resultadosMercenarios:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("boton:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("background:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("mercenarios:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("mercenarios/mercenario1:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("mercenarios/mercenario1:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(141, 117)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("mercenarios/mercenario2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(153, 151)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("mercenarios/mercenario2:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("mercenarios/mercenario3:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("mercenarios/mercenario3:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168, 184)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("mercenarios/mercenario4:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(186, 217)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("mercenarios/mercenario4:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("resultadosMercenarios/misionCumplidaFallida_label:text")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["MisionCOMPLETE"]
+}
+
+[sub_resource type="Animation" id="Animation_s0b63"]
+resource_name = "misionFallida"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("resultadosMercenarios:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(88, 52), Vector2(247.717, 159)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resultadosMercenarios:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(206, 149), Vector2(126, 95.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("boton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("resultadosMercenarios/misionCumplidaFallida_label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("resultadosMercenarios/misionCumplidaFallida_label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Mision Fallida"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("resultadosMercenarios:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("background:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_edlmr"]
+resource_name = "popUp"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("resultadosMercenarios:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(56, 42), Vector2(247.717, 159)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resultadosMercenarios:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(221, 164), Vector2(126, 96)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("resultadosMercenarios/misionCumplidaFallida_label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("resultadosMercenarios:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("boton:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("background:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("animaciones")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("mercenarios/mercenario1:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("mercenarios/mercenario1:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(191, 117), Vector2(141, 117)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("mercenarios/mercenario2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(203, 151), Vector2(153, 151)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("mercenarios/mercenario2:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("mercenarios/mercenario3:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("mercenarios/mercenario3:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(218, 184), Vector2(168, 184)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("mercenarios/mercenario4:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1.1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(236, 217), Vector2(186, 217)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("mercenarios/mercenario4:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(1.1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("mercenarios:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "method"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("mercenarios/mercenario1")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start"
+}]
+}
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("mercenarios/mercenario2")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start"
+}]
+}
+tracks/19/type = "method"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("mercenarios/mercenario3")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start"
+}]
+}
+tracks/20/type = "method"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("mercenarios/mercenario4")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start"
+}]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("resultadosMercenarios/misionCumplidaFallida_label:text")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Resultados"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_24kqe"]
+_data = {
+"RESET": SubResource("Animation_q3dp0"),
+"misionFallida": SubResource("Animation_s0b63"),
+"popUp": SubResource("Animation_edlmr")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_nsmvh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -194, 784, 0, 0, 0, 0, -194, 571, 0, 0, 0, 0, -452, 571, 0, 0, 0, 0, -453, 452)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_2m1w7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -407, 797, 0, 0, 0, 0, -406, 707)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_238n8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -144, 783, 0, 0, 0, 0, -140, 579, 0, 0, 0, 0, 286, 580, 0, 0, 0, 0, 286, 504, 0, 0, 0, 0, 800, 510, 0, 0, 0, 0, 800, 607, 0, 0, 0, 0, 1011, 609)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_t2ius"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1005, 558, 0, 0, 0, 0, 725, 556, 0, 0, 0, 0, 724, 491, 0, 0, 0, 0, 291, 482, 0, 0, 0, 0, 293, 586, 0, 0, 0, 0, -170, 585, 0, 0, 0, 0, -169, 779)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_v2jv3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -978, -183, 0, 0, 0, 0, -550, -189, 0, 0, 0, 0, -544, -31, 0, 0, 0, 0, -253, -28, 0, 0, 0, 0, -253, -45, 0, 0, 0, 0, -485, -43, 0, 0, 0, 0, -491, -217, 0, 0, 0, 0, -980, -226)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_suyla"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -978, -348, 0, 0, 0, 0, -250, -342, 0, 0, 0, 0, -126, -295, 0, 0, 0, 0, -61, -298, 0, 0, 0, 0, -55, -256, 0, 0, 0, 0, 105, -261, 0, 0, 0, 0, 107, -118, 0, 0, 0, 0, 997, -114)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_0y5ye"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -978, -309, 0, 0, 0, 0, -723, -304, 0, 0, 0, 0, -714, 141, 0, 0, 0, 0, -190, 132, 0, 0, 0, 0, -184, 770)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_r2je7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -980, -273, 0, 0, 0, 0, -239, -261, 0, 0, 0, 0, -130, -226, 0, 0, 0, 0, -87, -222, 0, 0, 0, 0, -85, 59, 0, 0, 0, 0, 133, 61, 0, 0, 0, 0, 254, 121, 0, 0, 0, 0, 274, 498, 0, 0, 0, 0, 988, 496)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_ur5d7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -978, -294, 0, 0, 0, 0, -236, -288, 0, 0, 0, 0, -129, -252, 0, 0, 0, 0, -107, -250, 0, 0, 0, 0, -104, 61, 0, 0, 0, 0, 146, 61, 0, 0, 0, 0, 257, 116, 0, 0, 0, 0, 257, 147, 0, 0, 0, 0, -190, 148, 0, 0, 0, 0, -188, 575, 0, 0, 0, 0, -717, 573, 0, 0, 0, 0, -735, -331, 0, 0, 0, 0, -989, -332)
+}
+point_count = 13
+
+[sub_resource type="Curve2D" id="Curve2D_o3rfo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -225, 746, 0, 0, 0, 0, -231, 599, 0, 0, 0, 0, -131, 599, 0, 0, 0, 0, -130, 741)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_l3ka8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 991, -128, 0, 0, 0, 0, 466, -127, 0, 0, 0, 0, -102, -126, 0, 0, 0, 0, -237, -192, 0, 0, 0, 0, -996, -189)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_dcdev"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -979, -377, 0, 0, 0, 0, -693, -379, 0, 0, 0, 0, -695, -473)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_w58rq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 995, -142, 0, 0, 0, 0, 472, -141, 0, 0, 0, 0, 466, -371)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_sr5i2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -211, 769, 0, 0, 0, 0, -218, 569, 0, 0, 0, 0, -400, 571, 0, 0, 0, 0, -397, 536)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_romxa"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1000, 502, 0, 0, 0, 0, 281, 495, 0, 0, 0, 0, 279, 127, 0, 0, 0, 0, 247, 124, 0, 0, 0, 0, 145, 62, 0, 0, 0, 0, -83, 61, 0, 0, 0, 0, -74, -227, 0, 0, 0, 0, 110, -224)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_seb7w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -971, -211, 0, 0, 0, 0, -522, -211, 0, 0, 0, 0, -521, -47, 0, 0, 0, 0, -233, -41)
+}
+point_count = 4
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_737fm"]
+diffuse_texture = ExtResource("8_a33tw")
+normal_texture = ExtResource("9_bdclf")
+specular_color = Color(0.819608, 1, 0.803922, 1)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kuh24"]
+polygon = PackedVector2Array(1, 0, 16, 9, 24, 2, 8, -6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucsdl"]
+atlas = ExtResource("14_ixk25")
+region = Rect2(13, 12, 294, 321)
+
+[sub_resource type="Gradient" id="Gradient_mwxsq"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wcok3"]
+gradient = SubResource("Gradient_mwxsq")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.2)
+
+[sub_resource type="Animation" id="Animation_q8pe0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-21, -56)]
+}
+
+[sub_resource type="Animation" id="Animation_hfs6p"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-21, -56), Vector2(-21, -62)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wm5ur"]
+_data = {
+"RESET": SubResource("Animation_q8pe0"),
+"idle": SubResource("Animation_hfs6p")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tfvt7"]
+render_priority = 0
+shader = ExtResource("9_8idy1")
+
+[sub_resource type="Animation" id="Animation_pjwiw"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0trrv"]
+resource_name = "ciclo"
+length = 108.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 48.1, 60.1, 78.1, 93.3, 108),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0.521569, 0.164706, 1), Color(0.989928, 0.518225, 0.173498, 1), Color(0.054902, 0.207843, 0.988235, 1), Color(0.0431373, 0.203922, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 87.1, 108),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"apagarFaroles"
+}, {
+"args": [],
+"method": &"encenderFaroles"
+}, {
+"args": [],
+"method": &"pasarDia"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6do82"]
+_data = {
+"RESET": SubResource("Animation_pjwiw"),
+"ciclo": SubResource("Animation_0trrv")
+}
+
+[sub_resource type="Animation" id="Animation_7ihjd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainCamera:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Environment/GremioInside/GuildCamera:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FadeInOut/background:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FadeInOut:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kitro"]
+resource_name = "entrarGremio"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environment/GremioInside/GuildCamera")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainCamera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-451, 344)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FadeInOut:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FadeInOut/background:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 0.7, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MainCamera:zoom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3, 3)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Environment/GremioInside/GuildCamera:enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ruddt"]
+resource_name = "salirGremio"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeInOut:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeInOut/background:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainCamera:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainCamera")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yt8yd"]
+_data = {
+"RESET": SubResource("Animation_7ihjd"),
+"entrarGremio": SubResource("Animation_kitro"),
+"salirGremio": SubResource("Animation_ruddt")
+}
+
+[node name="Gremio" type="Node2D" groups=["Gremio"]]
+texture_filter = 1
+script = ExtResource("2")
+metadata/_edit_vertical_guides_ = [958.0, -959.0]
+metadata/_edit_horizontal_guides_ = [-735.0]
+
+[node name="GUI" parent="." instance=ExtResource("2_wlbvi")]
+
+[node name="resultadosDeMision" parent="." instance=ExtResource("5_nh43h")]
+
+[node name="background" type="ColorRect" parent="resultadosDeMision"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.596078)
+
+[node name="boton" type="TextureButton" parent="resultadosDeMision"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resultadosMercenarios" type="NinePatchRect" parent="resultadosDeMision"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -79.5
+offset_right = 123.717
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1yl5b")
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 19
+patch_margin_bottom = 21
+
+[node name="mercenarios" type="Control" parent="resultadosDeMision"]
+process_priority = -1
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="animaciones" type="AnimationPlayer" parent="resultadosDeMision"]
+method_call_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_24kqe")
+}
+
+[node name="FadeInOut" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="background" type="ColorRect" parent="FadeInOut"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Console" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="SystemConsole" parent="Console" instance=ExtResource("8_eruwv")]
+
+[node name="Environment" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Paths" type="Node2D" parent="Environment"]
+script = ExtResource("6_agxnq")
+
+[node name="nuevaMision" type="Path2D" parent="Environment/Paths" groups=["nuevaMisionPath"]]
+curve = SubResource("Curve2D_nsmvh")
+
+[node name="nuevaMisionGuild" type="Path2D" parent="Environment/Paths" groups=["nuevaMisionPath"]]
+position = Vector2(-139, 551)
+curve = SubResource("Curve2D_2m1w7")
+
+[node name="path1" type="Path2D" parent="Environment/Paths" groups=["transeuntePath"]]
+curve = SubResource("Curve2D_238n8")
+
+[node name="path2" type="Path2D" parent="Environment/Paths" groups=["transeuntePath"]]
+curve = SubResource("Curve2D_t2ius")
+
+[node name="path3" type="Path2D" parent="Environment/Paths" groups=["transeuntePath"]]
+curve = SubResource("Curve2D_v2jv3")
+
+[node name="path4" type="Path2D" parent="Environment/Paths" groups=["transeuntePath"]]
+curve = SubResource("Curve2D_suyla")
+
+[node name="path5" type="Path2D" parent="Environment/Paths" groups=["transeuntePath"]]
+curve = SubResource("Curve2D_0y5ye")
+
+[node name="path6" type="Path2D" parent="Environment/Paths" groups=["transeuntePath"]]
+curve = SubResource("Curve2D_r2je7")
+
+[node name="path7" type="Path2D" parent="Environment/Paths" groups=["transeuntePath"]]
+curve = SubResource("Curve2D_ur5d7")
+
+[node name="path8" type="Path2D" parent="Environment/Paths" groups=["transeuntePath"]]
+curve = SubResource("Curve2D_o3rfo")
+
+[node name="path9" type="Path2D" parent="Environment/Paths" groups=["transeuntePath"]]
+curve = SubResource("Curve2D_l3ka8")
+
+[node name="mPath1" type="Path2D" parent="Environment/Paths" groups=["mercenaryPath"]]
+curve = SubResource("Curve2D_dcdev")
+
+[node name="mPath2" type="Path2D" parent="Environment/Paths" groups=["mercenaryPath"]]
+curve = SubResource("Curve2D_w58rq")
+
+[node name="mPath3" type="Path2D" parent="Environment/Paths" groups=["mercenaryPath"]]
+curve = SubResource("Curve2D_sr5i2")
+
+[node name="mPath4" type="Path2D" parent="Environment/Paths" groups=["mercenaryPath"]]
+curve = SubResource("Curve2D_romxa")
+
+[node name="mPath5" type="Path2D" parent="Environment/Paths" groups=["mercenaryPath"]]
+curve = SubResource("Curve2D_seb7w")
+
+[node name="NPCS" type="Node2D" parent="Environment"]
+
+[node name="Bloque" type="Sprite2D" parent="Environment"]
+modulate = Color(0.741176, 0, 0.741176, 1)
+z_index = 2
+position = Vector2(-16, 810)
+texture = SubResource("CanvasTexture_737fm")
+offset = Vector2(12, -15)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Environment/Bloque"]
+occluder = SubResource("OccluderPolygon2D_kuh24")
+occluder_light_mask = 3
+
+[node name="FarolesLights" type="Node2D" parent="Environment"]
+
+[node name="FarolLight" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(-125, 483)
+
+[node name="FarolLight2" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(-244, 466)
+
+[node name="FarolLight3" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(-473, 472)
+
+[node name="FarolLight4" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(-660, 465)
+
+[node name="FarolLight5" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(-650, 175)
+
+[node name="FarolLight6" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(-236, 178)
+
+[node name="FarolLight7" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(-123, 179)
+
+[node name="FarolLight8" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(228, 485)
+
+[node name="FarolLight9" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(228, 177)
+
+[node name="FarolLight10" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(691, 259)
+
+[node name="FarolLight11" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(922, 243)
+
+[node name="FarolLight12" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(915, 85)
+
+[node name="FarolLight13" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(701, 14)
+
+[node name="FarolLight14" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(465, -468)
+
+[node name="FarolLight15" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(251, -357)
+
+[node name="FarolLight16" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(251, -261)
+
+[node name="FarolLight17" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(136, -255)
+
+[node name="FarolLight18" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(136, -354)
+
+[node name="FarolLight19" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(114, -511)
+
+[node name="FarolLight20" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(274, -510)
+
+[node name="FarolLight21" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(269, -583)
+
+[node name="FarolLight22" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(117, -582)
+
+[node name="FarolLight23" parent="Environment/FarolesLights" instance=ExtResource("11_3bn25")]
+visible = false
+position = Vector2(-22, -440)
+
+[node name="KaoraMap_noPiso" type="Sprite2D" parent="Environment"]
+z_index = 10
+texture = ExtResource("10_gbkbx")
+
+[node name="KaoraMap_piso" type="Sprite2D" parent="Environment"]
+light_mask = 2
+z_index = -5
+texture = ExtResource("11_dq4x4")
+
+[node name="occluders" type="Node2D" parent="Environment/KaoraMap_piso"]
+
+[node name="GremioInside" type="Node2D" parent="Environment"]
+position = Vector2(-625, 1247)
+
+[node name="sprite" type="Sprite2D" parent="Environment/GremioInside"]
+z_index = -5
+texture = SubResource("AtlasTexture_ucsdl")
+
+[node name="GuildCamera" type="Camera2D" parent="Environment/GremioInside"]
+enabled = false
+
+[node name="lights" type="Node2D" parent="Environment/GremioInside"]
+
+[node name="FarolLight" parent="Environment/GremioInside/lights" instance=ExtResource("11_3bn25")]
+position = Vector2(-73, -147)
+
+[node name="light" type="PointLight2D" parent="Environment/GremioInside/lights/FarolLight"]
+scale = Vector2(4, 4)
+color = Color(0.964706, 0.498039, 0, 1)
+energy = 2.0
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_wcok3")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Environment/GremioInside/lights/FarolLight"]
+stream = ExtResource("21_nekcg")
+volume_db = 24.0
+max_distance = 100.0
+
+[node name="FarolLight2" parent="Environment/GremioInside/lights" instance=ExtResource("11_3bn25")]
+position = Vector2(28, -40)
+
+[node name="light" type="PointLight2D" parent="Environment/GremioInside/lights/FarolLight2"]
+scale = Vector2(4, 4)
+color = Color(0.964706, 0.498039, 0, 1)
+energy = 2.0
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_wcok3")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Environment/GremioInside/lights/FarolLight2"]
+stream = ExtResource("21_nekcg")
+volume_db = 24.0
+max_distance = 100.0
+
+[node name="FarolLight3" parent="Environment/GremioInside/lights" instance=ExtResource("11_3bn25")]
+position = Vector2(-117, -57)
+
+[node name="light" type="PointLight2D" parent="Environment/GremioInside/lights/FarolLight3"]
+scale = Vector2(4, 4)
+color = Color(0.964706, 0.498039, 0, 1)
+energy = 2.0
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_wcok3")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Environment/GremioInside/lights/FarolLight3"]
+stream = ExtResource("21_nekcg")
+volume_db = 24.0
+max_distance = 100.0
+
+[node name="FarolLight4" parent="Environment/GremioInside/lights" instance=ExtResource("11_3bn25")]
+position = Vector2(-89, 36)
+
+[node name="light" type="PointLight2D" parent="Environment/GremioInside/lights/FarolLight4"]
+scale = Vector2(4, 4)
+color = Color(0.964706, 0.498039, 0, 1)
+energy = 2.0
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_wcok3")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Environment/GremioInside/lights/FarolLight4"]
+stream = ExtResource("21_nekcg")
+volume_db = 24.0
+max_distance = 100.0
+
+[node name="FarolLight5" parent="Environment/GremioInside/lights" instance=ExtResource("11_3bn25")]
+position = Vector2(113, -27)
+
+[node name="light" type="PointLight2D" parent="Environment/GremioInside/lights/FarolLight5"]
+scale = Vector2(4, 4)
+color = Color(0.964706, 0.498039, 0, 1)
+energy = 2.0
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_wcok3")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Environment/GremioInside/lights/FarolLight5"]
+stream = ExtResource("21_nekcg")
+volume_db = 24.0
+max_distance = 100.0
+
+[node name="herrero" type="Sprite2D" parent="Environment"]
+z_index = 11
+position = Vector2(380, -431)
+texture = ExtResource("14_nyi2m")
+
+[node name="TextureRect" type="TextureRect" parent="Environment/herrero"]
+offset_left = -19.0
+offset_top = -54.0
+offset_right = 21.0
+offset_bottom = -14.0
+texture = ExtResource("15_483ir")
+
+[node name="clickDetection" type="TextureButton" parent="Environment/herrero"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -51.0
+offset_right = -14.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="mercader" type="Sprite2D" parent="Environment"]
+z_index = 11
+position = Vector2(290, -353)
+texture = ExtResource("16_bt8f7")
+
+[node name="TextureRect" type="TextureRect" parent="Environment/mercader"]
+offset_left = -21.0
+offset_top = -56.0
+offset_right = 19.0
+offset_bottom = -16.0
+texture = ExtResource("17_vlfsc")
+
+[node name="clickDetector" type="TextureButton" parent="Environment/mercader"]
+offset_left = -21.0
+offset_top = -52.0
+offset_right = 19.0
+offset_bottom = -12.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Environment/mercader"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_wm5ur")
+}
+
+[node name="MainCamera" type="Camera2D" parent="." groups=["mainCamera"]]
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
+drag_left_margin = 1.0
+drag_top_margin = 1.0
+drag_right_margin = 1.0
+drag_bottom_margin = 1.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("14_4xiev")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="MainCamera"]
+stream = ExtResource("20_niusx")
+autoplay = true
+
+[node name="shader" type="Control" parent="."]
+material = SubResource("ShaderMaterial_tfvt7")
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." groups=["CanvasModulate"]]
+
+[node name="cicloDiaNoche" type="AnimationPlayer" parent="." groups=["cicloDiaNoche"]]
+autoplay = "ciclo"
+libraries = {
+"": SubResource("AnimationLibrary_6do82")
+}
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yt8yd")
+}
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="GlobalTime" type="Timer" parent="Timers"]
+autostart = true
+
+[node name="transeunteGeneratorTimer" type="Timer" parent="Timers"]
+autostart = true
+
+[node name="mercenarioGeneratorTimer" type="Timer" parent="Timers"]
+autostart = true
+
+[node name="autoSaveTimer" type="Timer" parent="Timers"]
+wait_time = 30.0
+
+[node name="nuevaMisionTimer" type="Timer" parent="Timers"]
+wait_time = 3.0
+autostart = true
+
+[connection signal="entrarGremio" from="GUI" to="." method="entrarGremio"]
+[connection signal="menuPrincipal" from="GUI" to="." method="toMenuPrincipal"]
+[connection signal="salirGremio" from="GUI" to="." method="salirGremio"]
+[connection signal="pressed" from="Environment/herrero/clickDetection" to="GUI" method="abrir_herreria"]
+[connection signal="pressed" from="Environment/mercader/clickDetector" to="GUI" method="abrir_mercado"]
+[connection signal="timeout" from="Timers/GlobalTime" to="." method="_on_global_time_timeout"]
+[connection signal="timeout" from="Timers/transeunteGeneratorTimer" to="." method="_on_transeunte_generator_timer_timeout"]
+[connection signal="timeout" from="Timers/mercenarioGeneratorTimer" to="." method="_on_mercenario_generator_timer_timeout"]
+[connection signal="timeout" from="Timers/autoSaveTimer" to="." method="_on_auto_save_timer_timeout"]
+[connection signal="timeout" from="Timers/nuevaMisionTimer" to="." method="_on_nueva_mision_timer_timeout"]

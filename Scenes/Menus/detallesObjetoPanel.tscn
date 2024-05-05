@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg07cdu7bbnxu"]
+
+[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_ifaco"]
+[ext_resource type="Script" path="res://Scripts/detallesObjetoPanel.gd" id="2_tsj3g"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="3_5fbwd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ajio"]
+atlas = ExtResource("1_ifaco")
+region = Rect2(608, 0, 128, 160)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qvgrl"]
+load_path = "res://.godot/imported/materials.png-501678fe4dd62c6cb5cffcf1598a02e9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_km42u"]
+load_path = "res://.godot/imported/equipment.png-0e8e6a53c12fd0c33b64989ccd5619b0.ctex"
+
+[node name="detallesObjetoPanel" type="TextureRect" node_paths=PackedStringArray("imageObject", "imageEquipment", "nombre", "descripcion")]
+anchors_preset = -1
+anchor_top = 0.229
+anchor_right = 0.258
+anchor_bottom = 0.229
+offset_left = 1.0
+offset_top = -80.15
+offset_right = -1.52588e-05
+offset_bottom = 79.85
+texture = SubResource("AtlasTexture_8ajio")
+stretch_mode = 3
+script = ExtResource("2_tsj3g")
+imageObject = NodePath("node2dContainer/imageObject")
+imageEquipment = NodePath("node2dContainer/imageEquipment")
+nombre = NodePath("nombre_label")
+descripcion = NodePath("descripcion_text")
+
+[node name="node2dContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -47.0
+offset_right = 12.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="imageObject" type="Sprite2D" parent="node2dContainer"]
+visible = false
+position = Vector2(12, 12)
+texture = SubResource("CompressedTexture2D_qvgrl")
+hframes = 5
+vframes = 2
+
+[node name="imageEquipment" type="Sprite2D" parent="node2dContainer"]
+visible = false
+position = Vector2(12, 12)
+scale = Vector2(0.958333, 0.958333)
+texture = SubResource("CompressedTexture2D_km42u")
+hframes = 4
+vframes = 3
+frame = 8
+
+[node name="nombre_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -70.0
+offset_right = -24.0
+offset_bottom = -54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5fbwd")
+text = "NOMBRE DEL OBJETO"
+
+[node name="descripcion_text" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -20.0
+offset_right = -14.0
+offset_bottom = 45.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_5fbwd")
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+scroll_active = false

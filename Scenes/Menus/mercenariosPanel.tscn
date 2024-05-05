@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddxl6wsmou5do"]
+
+[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_ktj7x"]
+[ext_resource type="Script" path="res://Scripts/mercenariosPanel.gd" id="2_2pnhn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpp3m"]
+atlas = ExtResource("1_ktj7x")
+region = Rect2(880, 0, 144, 218)
+
+[node name="mercenariosPanel" type="TextureRect"]
+texture_filter = 1
+anchors_preset = -1
+anchor_top = 0.311
+anchor_right = 0.288
+anchor_bottom = 0.311
+offset_top = -108.85
+offset_right = -144.0
+offset_bottom = -108.85
+texture = SubResource("AtlasTexture_fpp3m")
+stretch_mode = 3
+script = ExtResource("2_2pnhn")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -68.0
+offset_right = -7.0
+offset_bottom = 78.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2

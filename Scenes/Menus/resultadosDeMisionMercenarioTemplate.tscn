@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dssrm7r0p1a8t"]
+
+[ext_resource type="Texture2D" uid="uid://cmdd4q0g1dy8d" path="res://icon.png" id="1_ss0mi"]
+[ext_resource type="Script" path="res://Scripts/resultadosDeMisionMercenarioTemplate.gd" id="2_25waf"]
+[ext_resource type="Texture2D" uid="uid://dvjwapd6dd660" path="res://TEST/lvl_up.png" id="3_db6jc"]
+[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="3_v5cwt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7152"]
+atlas = ExtResource("3_v5cwt")
+region = Rect2(1031, 208, 64, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6b5b"]
+atlas = ExtResource("3_v5cwt")
+region = Rect2(955, 272, 64, 4)
+
+[node name="mercenario" type="TextureRect" node_paths=PackedStringArray("expBar", "expGained") groups=["resultadosDeMisionMercenarioTemplate"]]
+offset_left = 145.0
+offset_top = 124.0
+offset_right = 176.0
+offset_bottom = 153.0
+texture = ExtResource("1_ss0mi")
+expand_mode = 1
+script = ExtResource("2_25waf")
+expGanada = 130.0
+expFinal = 130.0
+expBar = NodePath("exp_bar")
+expGained = NodePath("exp_gained")
+
+[node name="exp_bar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 20.0
+offset_right = 123.0
+offset_bottom = 27.0
+value = 40.0
+rounded = true
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_e7152")
+texture_progress = SubResource("AtlasTexture_j6b5b")
+
+[node name="exp_gained" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 37.0
+offset_top = -8.0
+offset_right = 110.0
+offset_bottom = 18.0001
+text = "+ 999 XP "
+
+[node name="lvl_up" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 125.0
+offset_top = 7.0
+offset_right = 153.0
+offset_bottom = 27.0
+texture = ExtResource("3_db6jc")

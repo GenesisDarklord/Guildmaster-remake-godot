@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c8hlrgukbjt0u"
+
+[deps]
+
+files=["res://DATABASES/Misiones.Nombre.translation", "res://DATABASES/Misiones.Descripcion.translation", "res://DATABASES/Misiones.Cliente.translation", "res://DATABASES/Misiones.Lugar.translation", "res://DATABASES/Misiones.Recompensa.translation", "res://DATABASES/Misiones.Drakmar.translation", "res://DATABASES/Misiones.XP.translation", "res://DATABASES/Misiones.Prestigio.translation", "res://DATABASES/Misiones.Tiempo.translation", "res://DATABASES/Misiones.Duracion.translation", "res://DATABASES/Misiones.Principal.translation"]
+
+source_file="res://DATABASES/Misiones.csv"
+dest_files=["res://DATABASES/Misiones.Nombre.translation", "res://DATABASES/Misiones.Descripcion.translation", "res://DATABASES/Misiones.Cliente.translation", "res://DATABASES/Misiones.Lugar.translation", "res://DATABASES/Misiones.Recompensa.translation", "res://DATABASES/Misiones.Drakmar.translation", "res://DATABASES/Misiones.XP.translation", "res://DATABASES/Misiones.Prestigio.translation", "res://DATABASES/Misiones.Tiempo.translation", "res://DATABASES/Misiones.Duracion.translation", "res://DATABASES/Misiones.Principal.translation"]
+
+[params]
+
+compress=true
+delimiter=0

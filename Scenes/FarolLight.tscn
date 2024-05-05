@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfxdcn17mp3wl"]
+
+[ext_resource type="Script" path="res://Scripts/light.gd" id="1_lpgsp"]
+[ext_resource type="AudioStream" uid="uid://bg03j876kbnw7" path="res://audio/Light Torch with Starting Loop 1.ogg" id="2_5nuik"]
+[ext_resource type="Texture2D" uid="uid://bfairvw1i4fxp" path="res://Sprites/LightMap.png" id="2_r5me5"]
+
+[node name="FarolLight" type="Node2D" groups=["lampara"]]
+script = ExtResource("1_lpgsp")
+
+[node name="light" type="PointLight2D" parent="."]
+scale = Vector2(1.5, 1.5)
+color = Color(1, 0.721569, 0.192157, 1)
+energy = 2.0
+blend_mode = 2
+range_item_cull_mask = 3
+texture = ExtResource("2_r5me5")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5nuik")
+volume_db = 24.0
+max_distance = 100.0

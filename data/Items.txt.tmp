@@ -1,0 +1,17 @@
+id_obj$nombre$tipo$descripcion$mat_1$c_mat1$mat_2$c_mat2$mat_3$c_mat3$ataque$defensa$fuerza$destresa$saiduria$precio$valor$rareza$t_fabric$obt_mercader$obt_mision$coords$icono
+1$Madera$Material$Material de madera básico para la mejora del gremio.$$$$$$$$$$$$10$1$1$0$Si$Si$0-0$materials.png
+2$Roca$Material$Material de roca básico para la mejora del gremio$$$$$$$$$$$$15$1$1$0$si$si$1-0$materials.png
+3$Tablon Madera$Material$Material de madera avanzado para la mejora del gremio.$Madera$2$$$$$$$$$$40$5$2$1$Si$Si$0-1$materials.png
+4$Bloque de piedra$Material$Material de roca avanzado para la mejora del gremio.$Roca$2$$$$$$$$$$50$8$2$1$Si$Si$1-1$materials.png
+5$Mena de hierro$Material$Mineral extraído de las vetas de hierro en las misiones$$$$$$$$$$$$30$3$1$0$Si$Si$2-0$materials.png
+6$Mena de plata$Material$Mineral extraído de las vetas de plata en las misiones.$$$$$$$$$$$$35$5$3$0$Si$Si$3-0$materials.png
+7$Mena de diamante$Material$Mineral extraído de las vetas de diamante en las misiones.$$$$$$$$$$$$50$8$5$0$Si$Si$4-0$materials.png
+8$Lingote de hierro$Material$Mena fundida de hierro, refinada y lista para moldear.$Mena de hierro$3$$$$$$$$$$60$10$2$1$Si$Si$2-1$materials.png
+9$Lingote de plata$Material$Mena fundida de plata, refinada y lista para moldear.$Mena de plata$3$$$$$$$$$$74$17$4$1$Si$Si$3-1$materials.png
+10$Lingote de diamante$Material$Mena fundida de diamante, refinada y lista para moldear.$Mena de diamante$5$$$$$$$$$$100$25$6$2$No$Si$4-1$materials.png
+11$Espada de hierro$Arma$Espada barata de hierro, con poco filo y oxidada$Lingote de hierro$2$$$$$10$1$5$1$1$80$20$3$1$Si$Si$0-2$equipments.png
+12$Espada de plata$Arma$Espada barata de plata, con poco filo$Lingote de plata$2$$$$$20$1$8$3$1$140$34$5$1$Si$Si$1-2$equipments.png
+13$Espada de diamante$Arma$Espada irrompible de inigualable filo. Brillante, capaz de reflejar el sol a través de sí$Lingote de diamante$2$$$$$40$2$12$7$1$250$40$7$2$No$No$2-2$equipments.png
+14$Armadura de hierro$Armadura$Armadura barata de hierro, no es la mejor de las defensas$Lingote de hierro$4$$$$$0$5$2$4$1$110$25$3$1$Si$Si$3-0$equipments.png
+15$Armadura de plata$Armadura$Armadura de plata brillante, mas resistente que la de hierro$Lingote de plata$4$$$$$0$10$3$4$1$165$42$5$2$Si$Si$3-1$equipments.png
+16$Armadura de diamante$Armadura$Armadura irrompible de diamante, dura a la para que reluciente$Lingote de diamante$4$$$$$5$20$6$9$2$320$55$7$3$No$No$3-2$equipments.png

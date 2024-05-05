@@ -1,0 +1,117 @@
+[gd_scene load_steps=15 format=3 uid="uid://cs27d2hbsoxkw"]
+
+[ext_resource type="Texture2D" uid="uid://wqoaohd5jk8" path="res://Sprites/GUI.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/PantallaDeCarga.gd" id="1_nmyrq"]
+[ext_resource type="Texture2D" uid="uid://d2pjj2xwffea0" path="res://Sprites/Reloj de Arena/Reloj de Arena.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ebc63jgf2u2m" path="res://Sprites/LoadingScreenBackground.png" id="3"]
+
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("1")
+region = Rect2(4, 116, 67, 16)
+
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("2")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("2")
+region = Rect2(22, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("2")
+region = Rect2(44, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="5"]
+atlas = ExtResource("2")
+region = Rect2(66, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="6"]
+atlas = ExtResource("2")
+region = Rect2(88, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="7"]
+atlas = ExtResource("2")
+region = Rect2(110, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="8"]
+atlas = ExtResource("2")
+region = Rect2(132, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="9"]
+atlas = ExtResource("2")
+region = Rect2(154, 0, 22, 22)
+
+[sub_resource type="SpriteFrames" id="10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("2")
+}, {
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}, {
+"duration": 1.0,
+"texture": SubResource("5")
+}, {
+"duration": 1.0,
+"texture": SubResource("6")
+}, {
+"duration": 1.0,
+"texture": SubResource("7")
+}, {
+"duration": 1.0,
+"texture": SubResource("8")
+}, {
+"duration": 1.0,
+"texture": SubResource("9")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+layer = 7
+visible = false
+script = ExtResource("1_nmyrq")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("3")
+expand_mode = 1
+
+[node name="Loading" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = -33.0
+offset_right = -78.0
+offset_bottom = -33.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Loading"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 63.0
+offset_bottom = 14.0
+texture = SubResource("1")
+
+[node name="sandClock" type="AnimatedSprite2D" parent="Loading"]
+position = Vector2(-21, 8)
+sprite_frames = SubResource("10")
+frame = 4
+frame_progress = 0.0398325
