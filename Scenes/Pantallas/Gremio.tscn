@@ -1,10 +1,12 @@
-[gd_scene load_steps=58 format=3 uid="uid://b48fupf0uofpp"]
+[gd_scene load_steps=70 format=3 uid="uid://b48fupf0uofpp"]
 
 [ext_resource type="Texture2D" uid="uid://wqoaohd5jk8" path="res://Sprites/GUI.png" id="1"]
 [ext_resource type="Script" path="res://Scripts/Gremio.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://bsm3iskov8ogi" path="res://Scenes/GUI.tscn" id="2_wlbvi"]
 [ext_resource type="PackedScene" uid="uid://d0uo8lkeuvogs" path="res://Scenes/Menus/resultadosDeMision.tscn" id="5_nh43h"]
 [ext_resource type="Script" path="res://Scripts/Paths.gd" id="6_agxnq"]
+[ext_resource type="Texture2D" uid="uid://dqic4hqmfbsmi" path="res://TEST/GUI.png" id="6_fococ"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="7_execp"]
 [ext_resource type="Texture2D" uid="uid://ye8gr7mq74h8" path="res://TEST/bloque_d.png" id="8_a33tw"]
 [ext_resource type="PackedScene" uid="uid://iu5cqliqvw6d" path="res://Scenes/DEBUG/system_console.tscn" id="8_eruwv"]
 [ext_resource type="Shader" path="res://Shaders/new_shader.gdshader" id="9_8idy1"]
@@ -14,12 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://bhgen64yxuue6" path="res://TEST/KaoraMap_piso.png" id="11_dq4x4"]
 [ext_resource type="Script" path="res://Scripts/MainCamera.gd" id="14_4xiev"]
 [ext_resource type="Texture2D" uid="uid://back54v38igws" path="res://TEST/Guild.png" id="14_ixk25"]
-[ext_resource type="Texture2D" uid="uid://uowmfbceoyqh" path="res://NewSprites/kirbo prueba.png" id="14_nyi2m"]
-[ext_resource type="Texture2D" uid="uid://cxjm5uxmf6ejo" path="res://TEST/herreria icon.png" id="15_483ir"]
-[ext_resource type="Texture2D" uid="uid://bnswk8cmcfau1" path="res://TEST/genesis.png" id="16_bt8f7"]
-[ext_resource type="Texture2D" uid="uid://fqahxq8qqmwh" path="res://TEST/mercaderCursor.png" id="17_vlfsc"]
+[ext_resource type="Texture2D" uid="uid://vhh1ha3epvp0" path="res://NewSprites/herrero.png" id="16_i0u82"]
+[ext_resource type="Texture2D" uid="uid://bo5tfyt27kqvr" path="res://NewSprites/icons.png" id="17_ow0an"]
+[ext_resource type="Texture2D" uid="uid://cj2q0xha7rrw8" path="res://NewSprites/mercader.png" id="18_702bg"]
 [ext_resource type="AudioStream" uid="uid://sqj0uj3evjw3" path="res://audio/9 Searching Further LOOP TomMusic.ogg" id="20_niusx"]
 [ext_resource type="AudioStream" uid="uid://bg03j876kbnw7" path="res://audio/Light Torch with Starting Loop 1.ogg" id="21_nekcg"]
+[ext_resource type="Texture2D" uid="uid://dekkgh1x66yy" path="res://NewSprites/rain_particle.png" id="22_do60y"]
+[ext_resource type="Texture2D" uid="uid://cbtj5u1q5wwsh" path="res://NewSprites/background_black.png" id="23_c720w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1yl5b"]
 atlas = ExtResource("1")
@@ -602,9 +605,23 @@ _data = {
 "popUp": SubResource("Animation_edlmr")
 }
 
+[sub_resource type="Gradient" id="Gradient_qkrla"]
+colors = PackedColorArray(0, 0, 0, 0.290196, 1, 1, 1, 0.694118)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0sp2b"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xtlbu"]
+color_ramp = SubResource("Gradient_qkrla")
+noise = SubResource("FastNoiseLite_0sp2b")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5e8d"]
+atlas = ExtResource("6_fococ")
+region = Rect2(307, 0, 74, 96)
+
 [sub_resource type="Curve2D" id="Curve2D_nsmvh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -194, 784, 0, 0, 0, 0, -194, 571, 0, 0, 0, 0, -452, 571, 0, 0, 0, 0, -453, 452)
+"points": PackedVector2Array(0, 0, 0, 0, -194, 784, 0, 0, 0, 0, -194, 571, 0, 0, 0, 0, -452, 571, 0, 0, 0, 0, -453, 487)
 }
 point_count = 4
 
@@ -616,13 +633,13 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_238n8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -144, 783, 0, 0, 0, 0, -140, 579, 0, 0, 0, 0, 286, 580, 0, 0, 0, 0, 286, 504, 0, 0, 0, 0, 800, 510, 0, 0, 0, 0, 800, 607, 0, 0, 0, 0, 1011, 609)
+"points": PackedVector2Array(0, 0, 0, 0, -144, 783, 0, 0, 0, 0, -139, 602, 0, 0, 0, 0, 288, 607, 0, 0, 0, 0, 286, 504, 0, 0, 0, 0, 800, 510, 0, 0, 0, 0, 800, 607, 0, 0, 0, 0, 1011, 609)
 }
 point_count = 7
 
 [sub_resource type="Curve2D" id="Curve2D_t2ius"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1005, 558, 0, 0, 0, 0, 725, 556, 0, 0, 0, 0, 724, 491, 0, 0, 0, 0, 291, 482, 0, 0, 0, 0, 293, 586, 0, 0, 0, 0, -170, 585, 0, 0, 0, 0, -169, 779)
+"points": PackedVector2Array(0, 0, 0, 0, 1005, 558, 0, 0, 0, 0, 725, 556, 0, 0, 0, 0, 724, 491, 0, 0, 0, 0, 291, 482, 0, 0, 0, 0, 297, 619, 0, 0, 0, 0, -164, 613, 0, 0, 0, 0, -169, 779)
 }
 point_count = 7
 
@@ -634,7 +651,7 @@ point_count = 8
 
 [sub_resource type="Curve2D" id="Curve2D_suyla"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -978, -348, 0, 0, 0, 0, -250, -342, 0, 0, 0, 0, -126, -295, 0, 0, 0, 0, -61, -298, 0, 0, 0, 0, -55, -256, 0, 0, 0, 0, 105, -261, 0, 0, 0, 0, 107, -118, 0, 0, 0, 0, 997, -114)
+"points": PackedVector2Array(0, 0, 0, 0, -978, -348, 0, 0, 0, 0, -250, -342, 0, 0, 0, 0, -126, -295, 0, 0, 0, 0, -62, -288, 0, 0, 0, 0, -64, -206, 0, 0, 0, 0, 90, -207, 0, 0, 0, 0, 75, -87, 0, 0, 0, 0, 1004, -90)
 }
 point_count = 8
 
@@ -646,13 +663,13 @@ point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_r2je7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -980, -273, 0, 0, 0, 0, -239, -261, 0, 0, 0, 0, -130, -226, 0, 0, 0, 0, -87, -222, 0, 0, 0, 0, -85, 59, 0, 0, 0, 0, 133, 61, 0, 0, 0, 0, 254, 121, 0, 0, 0, 0, 274, 498, 0, 0, 0, 0, 988, 496)
+"points": PackedVector2Array(0, 0, 0, 0, -980, -273, 0, 0, 0, 0, -239, -261, 0, 0, 0, 0, -130, -226, 0, 0, 0, 0, -87, -222, 0, 0, 0, 0, -92, 110, 0, 0, 0, 0, 139, 110, 0, 0, 0, 0, 275, 179, 0, 0, 0, 0, 274, 498, 0, 0, 0, 0, 988, 496)
 }
 point_count = 9
 
 [sub_resource type="Curve2D" id="Curve2D_ur5d7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -978, -294, 0, 0, 0, 0, -236, -288, 0, 0, 0, 0, -129, -252, 0, 0, 0, 0, -107, -250, 0, 0, 0, 0, -104, 61, 0, 0, 0, 0, 146, 61, 0, 0, 0, 0, 257, 116, 0, 0, 0, 0, 257, 147, 0, 0, 0, 0, -190, 148, 0, 0, 0, 0, -188, 575, 0, 0, 0, 0, -717, 573, 0, 0, 0, 0, -735, -331, 0, 0, 0, 0, -989, -332)
+"points": PackedVector2Array(0, 0, 0, 0, -978, -294, 0, 0, 0, 0, -236, -288, 0, 0, 0, 0, -129, -252, 0, 0, 0, 0, -107, -250, 0, 0, 0, 0, -100, 102, 0, 0, 0, 0, 155, 100, 0, 0, 0, 0, 254, 177, 0, 0, 0, 0, 253, 208, 0, 0, 0, 0, -191, 207, 0, 0, 0, 0, -188, 575, 0, 0, 0, 0, -717, 573, 0, 0, 0, 0, -735, -331, 0, 0, 0, 0, -989, -332)
 }
 point_count = 13
 
@@ -664,31 +681,31 @@ point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_l3ka8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 991, -128, 0, 0, 0, 0, 466, -127, 0, 0, 0, 0, -102, -126, 0, 0, 0, 0, -237, -192, 0, 0, 0, 0, -996, -189)
+"points": PackedVector2Array(0, 0, 0, 0, 991, -128, 0, 0, 0, 0, 483, -90, 0, 0, 0, 0, -95, -98, 0, 0, 0, 0, -237, -192, 0, 0, 0, 0, -996, -189)
 }
 point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_dcdev"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -979, -377, 0, 0, 0, 0, -693, -379, 0, 0, 0, 0, -695, -473)
+"points": PackedVector2Array(0, 0, 0, 0, -979, -377, 0, 0, 0, 0, -693, -379, 0, 0, 0, 0, -696, -416)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_w58rq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 995, -142, 0, 0, 0, 0, 472, -141, 0, 0, 0, 0, 466, -371)
+"points": PackedVector2Array(0, 0, 0, 0, 995, -142, 0, 0, 0, 0, 472, -141, 0, 0, 0, 0, 475, -328)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_sr5i2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -211, 769, 0, 0, 0, 0, -218, 569, 0, 0, 0, 0, -400, 571, 0, 0, 0, 0, -397, 536)
+"points": PackedVector2Array(0, 0, 0, 0, -211, 769, 0, 0, 0, 0, -213, 606, 0, 0, 0, 0, -400, 607, 0, 0, 0, 0, -400, 579)
 }
 point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_romxa"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1000, 502, 0, 0, 0, 0, 281, 495, 0, 0, 0, 0, 279, 127, 0, 0, 0, 0, 247, 124, 0, 0, 0, 0, 145, 62, 0, 0, 0, 0, -83, 61, 0, 0, 0, 0, -74, -227, 0, 0, 0, 0, 110, -224)
+"points": PackedVector2Array(0, 0, 0, 0, 1000, 502, 0, 0, 0, 0, 281, 495, 0, 0, 0, 0, 278, 165, 0, 0, 0, 0, 247, 160, 0, 0, 0, 0, 147, 109, 0, 0, 0, 0, -84, 107, 0, 0, 0, 0, -74, -227, 0, 0, 0, 0, 110, -224)
 }
 point_count = 8
 
@@ -720,6 +737,10 @@ height = 100
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0.2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kehj"]
+atlas = ExtResource("17_ow0an")
+region = Rect2(36, 7, 22, 25)
 
 [sub_resource type="Animation" id="Animation_q8pe0"]
 length = 0.001
@@ -757,6 +778,10 @@ _data = {
 "RESET": SubResource("Animation_q8pe0"),
 "idle": SubResource("Animation_hfs6p")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veirm"]
+atlas = ExtResource("17_ow0an")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tfvt7"]
 render_priority = 0
@@ -1019,11 +1044,29 @@ _data = {
 "salirGremio": SubResource("Animation_ruddt")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mqank"]
+emission_shape = 3
+emission_box_extents = Vector3(500, 500, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8l3wt"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q8xxo"]
+generate_mipmaps = false
+seamless = true
+normalize = false
+color_ramp = SubResource("Gradient_qkrla")
+noise = SubResource("FastNoiseLite_8l3wt")
+
 [node name="Gremio" type="Node2D" groups=["Gremio"]]
 texture_filter = 1
 script = ExtResource("2")
-metadata/_edit_vertical_guides_ = [958.0, -959.0]
-metadata/_edit_horizontal_guides_ = [-735.0]
+metadata/_edit_vertical_guides_ = [552.0]
+metadata/_edit_horizontal_guides_ = [697.0, -696.0]
 
 [node name="GUI" parent="." instance=ExtResource("2_wlbvi")]
 
@@ -1096,6 +1139,60 @@ color = Color(0, 0, 0, 0)
 process_mode = 3
 
 [node name="SystemConsole" parent="Console" instance=ExtResource("8_eruwv")]
+
+[node name="PopUps" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+
+[node name="bg" type="TextureButton" parent="PopUps"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("NoiseTexture2D_xtlbu")
+
+[node name="pop_up_bg" type="NinePatchRect" parent="PopUps"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -53.0
+offset_right = 115.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_l5e8d")
+patch_margin_left = 8
+patch_margin_top = 11
+patch_margin_right = 9
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="PopUps/pop_up_bg"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 4.0
+offset_right = 155.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.580392, 0.427451, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("7_execp")
+theme_override_font_sizes/font_size = 28
+text = "INFORMACION"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopUps/pop_up_bg"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 53.0
+offset_right = 213.0
+offset_bottom = 123.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_execp")
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+scroll_active = false
 
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1262,11 +1359,13 @@ position = Vector2(-22, -440)
 [node name="KaoraMap_noPiso" type="Sprite2D" parent="Environment"]
 z_index = 10
 texture = ExtResource("10_gbkbx")
+metadata/_edit_lock_ = true
 
 [node name="KaoraMap_piso" type="Sprite2D" parent="Environment"]
 light_mask = 2
 z_index = -5
 texture = ExtResource("11_dq4x4")
+metadata/_edit_lock_ = true
 
 [node name="occluders" type="Node2D" parent="Environment/KaoraMap_piso"]
 
@@ -1359,15 +1458,15 @@ max_distance = 100.0
 
 [node name="herrero" type="Sprite2D" parent="Environment"]
 z_index = 11
-position = Vector2(380, -431)
-texture = ExtResource("14_nyi2m")
+position = Vector2(376, -390)
+texture = ExtResource("16_i0u82")
 
 [node name="TextureRect" type="TextureRect" parent="Environment/herrero"]
-offset_left = -19.0
-offset_top = -54.0
-offset_right = 21.0
-offset_bottom = -14.0
-texture = ExtResource("15_483ir")
+offset_left = -21.0
+offset_top = -56.0
+offset_right = 19.0
+offset_bottom = -16.0
+texture = SubResource("AtlasTexture_8kehj")
 
 [node name="clickDetection" type="TextureButton" parent="Environment/herrero"]
 anchors_preset = 15
@@ -1381,17 +1480,23 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Environment/herrero"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_wm5ur")
+}
+
 [node name="mercader" type="Sprite2D" parent="Environment"]
 z_index = 11
-position = Vector2(290, -353)
-texture = ExtResource("16_bt8f7")
+position = Vector2(288, -301)
+texture = ExtResource("18_702bg")
 
 [node name="TextureRect" type="TextureRect" parent="Environment/mercader"]
 offset_left = -21.0
 offset_top = -56.0
 offset_right = 19.0
 offset_bottom = -16.0
-texture = ExtResource("17_vlfsc")
+texture = SubResource("AtlasTexture_veirm")
 
 [node name="clickDetector" type="TextureButton" parent="Environment/mercader"]
 offset_left = -21.0
@@ -1406,6 +1511,7 @@ libraries = {
 }
 
 [node name="MainCamera" type="Camera2D" parent="." groups=["mainCamera"]]
+process_priority = 10
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0
 drag_left_margin = 1.0
@@ -1419,6 +1525,9 @@ script = ExtResource("14_4xiev")
 [node name="BGM" type="AudioStreamPlayer2D" parent="MainCamera"]
 stream = ExtResource("20_niusx")
 autoplay = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MainCamera"]
+remote_path = NodePath("../../rain")
 
 [node name="shader" type="Control" parent="."]
 material = SubResource("ShaderMaterial_tfvt7")
@@ -1458,9 +1567,33 @@ wait_time = 30.0
 wait_time = 3.0
 autostart = true
 
+[node name="rain" type="GPUParticles2D" parent="."]
+visible = false
+z_index = 12
+amount = 2000
+process_material = SubResource("ParticleProcessMaterial_mqank")
+texture = ExtResource("22_do60y")
+lifetime = 3.0
+fixed_fps = 60
+
+[node name="background" type="Sprite2D" parent="rain"]
+modulate = Color(1, 1, 1, 0.486275)
+show_behind_parent = true
+position = Vector2(-38, 37.5)
+scale = Vector2(284, 225.4)
+texture = ExtResource("23_c720w")
+
+[node name="niebla_sprite" type="Sprite2D" parent="."]
+visible = false
+z_index = 12
+position = Vector2(-208.501, -1.52588e-05)
+scale = Vector2(2.98242, 2.71094)
+texture = SubResource("NoiseTexture2D_q8xxo")
+
 [connection signal="entrarGremio" from="GUI" to="." method="entrarGremio"]
 [connection signal="menuPrincipal" from="GUI" to="." method="toMenuPrincipal"]
 [connection signal="salirGremio" from="GUI" to="." method="salirGremio"]
+[connection signal="pressed" from="PopUps/bg" to="." method="cerrarPopUp"]
 [connection signal="pressed" from="Environment/herrero/clickDetection" to="GUI" method="abrir_herreria"]
 [connection signal="pressed" from="Environment/mercader/clickDetector" to="GUI" method="abrir_mercado"]
 [connection signal="timeout" from="Timers/GlobalTime" to="." method="_on_global_time_timeout"]

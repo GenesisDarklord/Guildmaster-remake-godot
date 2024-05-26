@@ -8,6 +8,10 @@ func _on_pressed():
 		get_parent().get_parent().get_parent().get_parent().call("ActualizarAnguloBalanza")
 	else:
 		get_parent().get_parent().get_parent().get_parent().call("mostrarDetallesMercenarioPanel", mercenario)
+		get_parent().get_parent().get_parent().get_parent().call("cerrarAlmacenPanel")
+		Flags.equipandoMercenario = false
+		Flags.equipandoMercenarioArma = false
+		Flags.equipandoMercenarioArmadura = false
 
 func mostrarDatos(mercenario:Mercenario):
 	self.mercenario = mercenario

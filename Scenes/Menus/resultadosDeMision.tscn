@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://d0uo8lkeuvogs"]
 
 [ext_resource type="Script" path="res://Scripts/resultadosDeMision.gd" id="1_8bla4"]
-[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="2_auvqy"]
+[ext_resource type="Texture2D" uid="uid://b8be4j6vy4fhm" path="res://NewSprites/GUI.png" id="2_auvqy"]
 [ext_resource type="PackedScene" uid="uid://dssrm7r0p1a8t" path="res://Scenes/Menus/resultadosDeMisionMercenarioTemplate.tscn" id="3_7jk2h"]
 [ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="3_s5o0n"]
 
@@ -263,6 +263,18 @@ tracks/20/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("resultadosMercenarios/nombre_mision:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_s0b63"]
 resource_name = "misionFallida"
@@ -375,6 +387,18 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(59, 47.5)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("resultadosMercenarios/nombre_mision:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_edlmr"]
 resource_name = "popUp"
@@ -389,7 +413,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(56, 42), Vector2(248, 227)]
+"values": [Vector2(56, 42), Vector2(248, 256)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -401,7 +425,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(221, 164), Vector2(114, 40)]
+"values": [Vector2(221, 164), Vector2(114, 38)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -698,6 +722,18 @@ tracks/25/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("resultadosMercenarios/nombre_mision:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_24kqe"]
 _data = {
@@ -736,10 +772,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 126.0
-offset_top = 95.5
-offset_right = 373.717
-offset_bottom = 254.5
+offset_left = -124.0
+offset_top = -79.5
+offset_right = 123.717
+offset_bottom = 79.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_1yl5b")
@@ -756,10 +792,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 59.0
-offset_top = 47.5
-offset_right = 201.0
-offset_bottom = 81.5
+offset_left = -64.8585
+offset_top = -32.0
+offset_right = 77.1416
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.0352941, 0.0352941, 1)
@@ -773,6 +809,18 @@ theme_override_fonts/font = ExtResource("3_s5o0n")
 theme_override_font_sizes/font_size = 38
 text = "MisionCOMPLETE"
 
+[node name="nombre_mision" type="Label" parent="resultadosMercenarios"]
+visible = false
+layout_mode = 0
+offset_left = 47.0
+offset_top = 33.0
+offset_right = 192.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s5o0n")
+text = "NOMBRE DE LA MISON"
+horizontal_alignment = 1
+
 [node name="objetos" type="HBoxContainer" parent="resultadosMercenarios"]
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -781,8 +829,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -78.5
-offset_bottom = -47.5
+offset_top = -68.0
+offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -792,8 +840,10 @@ process_priority = -1
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1.0
+offset_top = 26.0
+offset_right = 39.0
+offset_bottom = 66.0
 
 [node name="mercenario1" parent="mercenarios" instance=ExtResource("3_7jk2h")]
 modulate = Color(1, 1, 1, 0)
@@ -813,7 +863,6 @@ offset_left = 153.0
 offset_top = 151.0
 offset_right = 184.0
 offset_bottom = 180.0
-nombre = "este"
 expGanada = 80.0
 expFinal = 80.0
 

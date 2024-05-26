@@ -3,6 +3,11 @@ extends AnimationPlayer
 func _ready():
 	pass
 
+func actualizarDiaMesLabel():
+	var dia = GlobalTime.TIME.dia
+	var mes = GlobalTime.TIME.mes
+	get_tree().get_nodes_in_group('diaMesCinematica')[0].text = 'DIA ' + str(dia) + ' DEL MES ' + str(mes)
+
 func prepararCinematica():#esta funcion oculta la instancia del gremio para la cinematica
 	get_tree().get_nodes_in_group("Gremio")[0].visible = false
 	get_tree().get_nodes_in_group("GUI")[0].visible = false

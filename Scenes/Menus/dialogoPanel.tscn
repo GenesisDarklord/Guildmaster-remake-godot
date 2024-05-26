@@ -1,20 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp34r58pkflqd"]
+[gd_scene load_steps=12 format=3 uid="uid://bp34r58pkflqd"]
 
-[ext_resource type="Texture2D" uid="uid://wqoaohd5jk8" path="res://Sprites/GUI.png" id="1_iws8c"]
+[ext_resource type="Texture2D" uid="uid://dqic4hqmfbsmi" path="res://TEST/GUI.png" id="1_7b4pq"]
 [ext_resource type="Script" path="res://Scripts/dialogoPanel.gd" id="2_jufmk"]
 [ext_resource type="Texture2D" uid="uid://fko1xje8kuy6" path="res://TEST/cursorDialogo.png" id="3_fpqsj"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="3_maj48"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0c63i"]
-atlas = ExtResource("1_iws8c")
-region = Rect2(603.268, 184.971, 15.7323, 16.2157)
-
-[sub_resource type="LabelSettings" id="LabelSettings_trqum"]
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mtken"]
-atlas = ExtResource("1_iws8c")
-region = Rect2(388, 52, 96, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_t506u"]
+atlas = ExtResource("1_7b4pq")
+region = Rect2(1280, 224, 176, 48)
 
 [sub_resource type="Animation" id="Animation_1x4te"]
 length = 0.001
@@ -96,13 +89,13 @@ offset_top = 212.0
 offset_right = 422.0
 offset_bottom = 315.0
 pivot_offset = Vector2(246, -95)
-texture = SubResource("AtlasTexture_0c63i")
-patch_margin_left = 4
-patch_margin_top = 5
+texture = SubResource("AtlasTexture_t506u")
+patch_margin_left = 33
+patch_margin_top = 6
 patch_margin_right = 5
 patch_margin_bottom = 5
 script = ExtResource("2_jufmk")
-velocidad = 0.5
+velocidad = 0.8
 texto = NodePath("texto_text")
 nombre = NodePath("nombre_label")
 cursor = NodePath("siguiente_img")
@@ -114,38 +107,30 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 14.0
-offset_right = -12.0
-offset_bottom = -23.0
+offset_left = 14.0
+offset_top = 33.0
+offset_right = -26.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "HOLA"
+theme_override_fonts/normal_font = ExtResource("3_maj48")
+theme_override_font_sizes/normal_font_size = 23
+text = "ASD"
 scroll_active = false
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="nombre_label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 9.0
-offset_top = -26.0
-offset_right = 36.0
-label_settings = SubResource("LabelSettings_trqum")
-
-[node name="nombre_background" type="NinePatchRect" parent="nombre_label"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_mtken")
-patch_margin_left = 11
-patch_margin_top = 9
-patch_margin_right = 12
-patch_margin_bottom = 10
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 63.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_maj48")
+theme_override_font_sizes/font_size = 23
+text = "QWR"
 
 [node name="siguiente_img" type="TextureRect" parent="."]
 layout_mode = 0

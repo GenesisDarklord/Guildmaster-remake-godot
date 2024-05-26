@@ -1,25 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://ds272tlyjsdor"]
+[gd_scene load_steps=11 format=3 uid="uid://ds272tlyjsdor"]
 
 [ext_resource type="Script" path="res://Scripts/mercaderPanel.gd" id="1_citvs"]
-[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_vf407"]
 [ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="2_o0n4y"]
+[ext_resource type="PackedScene" uid="uid://d333wqgv4loe8" path="res://Scenes/Menus/almacenPanel.tscn" id="2_refy0"]
 [ext_resource type="Script" path="res://Scripts/objetoTienda.gd" id="3_6afsk"]
+[ext_resource type="Texture2D" uid="uid://d2xgkduhlp40y" path="res://NewSprites/GUI_old.png" id="3_rm46s"]
 [ext_resource type="Texture2D" uid="uid://cmxyabydxfvaq" path="res://NewSprites/materials.png" id="4_v2k7c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulr5t"]
-atlas = ExtResource("1_vf407")
+atlas = ExtResource("3_rm46s")
 region = Rect2(1024, 304, 176, 112)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_amywm"]
-atlas = ExtResource("1_vf407")
+atlas = ExtResource("3_rm46s")
 region = Rect2(1216, 321, 30, 33)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6mqkt"]
 load_path = "res://.godot/imported/equipment.png-0e8e6a53c12fd0c33b64989ccd5619b0.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8jkrd"]
-atlas = ExtResource("1_vf407")
-region = Rect2(981, 344, 20, 9)
+atlas = ExtResource("3_rm46s")
+region = Rect2(982, 344, 20, 9)
 
 [node name="mercaderPanel" type="Control"]
 layout_mode = 3
@@ -38,12 +39,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="almacenPanel" parent="." instance=ExtResource("2_refy0")]
+layout_mode = 1
+anchor_left = 0.38
+anchor_top = 0.326
+anchor_right = 0.668
+anchor_bottom = 0.326
+offset_left = -1.99998
+offset_top = -112.1
+offset_right = -2.0
+offset_bottom = 112.9
+
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 198.0
-offset_right = 346.0
-offset_bottom = 310.0
+offset_left = 171.0
+offset_top = 226.0
+offset_right = 347.0
+offset_bottom = 338.0
 texture = SubResource("AtlasTexture_ulr5t")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="background"]

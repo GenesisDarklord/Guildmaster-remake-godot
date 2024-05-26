@@ -11,10 +11,10 @@ func _process(delta):
 	exec()
 
 func mostrarOcultar():
-	if Input.is_action_just_pressed("escape") and visible == true:
+	if Input.is_action_just_pressed("console") and visible == true:
 		get_tree().paused = false
 		visible = false
-	if Input.is_action_just_pressed("console"):
+	elif Input.is_action_just_pressed("console") and visible == false:
 		get_tree().paused = true
 		visible = true
 
@@ -53,6 +53,12 @@ func all_misions_timeup():
 func anterior():
 	if Input.is_key_pressed(KEY_UP) and is_visible_in_tree():
 		TextNode.text = anteriorText
+
+func boom():
+	System.queue_free()
+
+func retirar_mercenario():
+	System.retirarMercenarioAleatorio()
 
 func exec():
 	if Input.is_action_just_pressed("enter") and is_visible_in_tree():

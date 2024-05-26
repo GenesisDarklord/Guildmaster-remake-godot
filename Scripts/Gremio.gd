@@ -7,7 +7,9 @@ extends Node2D
 	"maxCantMisiones": 5,
 	"cantMercenariosDisponibles": 0,
 	"cantMercenariosEnMision": 0,
-	"maxCantMercenarios":10
+	"maxCantMercenarios":10,
+	"prestigio": 0,
+	"salarioPorMercenario": 100
 }
 
 @onready var npcsNode = $Environment/NPCS
@@ -35,6 +37,7 @@ func actualizarInfoGeneral():
 	$GUI/Infos/InfoGeneral/cantMercenariosEnMision_label.text = str(stats.cantMercenariosEnMision)
 	$GUI/Infos/InfoGeneral/cantMisiones_label.text = str(stats.cantMisionesAceptadas)
 	$GUI/Infos/InfoGeneral/drakmar_label.text = str(stats.drakmar)
+	$GUI/Infos/InfoGeneral/prestigio_label.text = str(stats.prestigio)
 	
 	if GlobalTime.TIME.minutos == 0:
 		$GUI/Infos/InfoGeneral/hora_minutos_label.text = str(GlobalTime.TIME.hora) + ":" + "00"
@@ -65,6 +68,7 @@ func _on_menuPrincipal_btn_pressed() -> void:
 
 func pasarDia():
 	System.pasarDia()
+	elegirClima()
 
 func encenderFaroles():
 	var faroles  = get_tree().get_nodes_in_group("lampara")
@@ -116,6 +120,84 @@ func calcularHipotenusa(v1:Vector2, v2:Vector2):
 
 func _on_global_time_timeout():
 	GlobalTime.TIME.minutos += 10
+	comprobarSueldoMercenarios()
+	comprobarAburrimiento()
+	mostrarTutoriales()
+	comprobarMisionesTerminadas()
+
+func comprobarMisionesTerminadas():
+	var hora = GlobalTime.TIME.hora
+	var minutos = GlobalTime.TIME.minutos
+	
+	var misionesTerminadas = []
+	
+	if hora == 6 and minutos == 20:
+		for misionID in System.SystemStats.misionesEnCurso:
+			if System.buscarMisionPorId(misionID).stats.diasRestantes == 0:
+				misionesTerminadas.append(misionID)
+	
+	procesarColaMisionesCompletadas(misionesTerminadas)
+
+func procesarColaMisionesCompletadas(cola: Array):
+	while cola.size() != 0:
+		var misionID = cola.pop_front()
+		completarMision(System.buscarMisionPorId(misionID))
+		await $resultadosDeMision.terminado
+
+func completarMision(mision: Mision):
+	var sumaStats = 0
+	
+	for mercenarioID in mision.stats.mercenariosAsignados:
+		sumaStats += System.buscarMercenarioPorId(mercenarioID).stats.ataque
+	
+	var num = randi_range(0, 100)
+	var XP = mision.stats.XP
+	var div = float(sumaStats) / float(XP)
+	var porciento = int(div * 100)
+	
+	if num < porciento:
+		System.cumplirMision(mision)
+	if num > porciento:
+		System.fallarMision(mision)
+
+func comprobarSueldoMercenarios():
+	var dia = GlobalTime.TIME.dia
+	var hora = GlobalTime.TIME.hora
+	var minutos = GlobalTime.TIME.minutos
+	var cantidadMercenarios = System.SystemStats.mercenariosContratados.size()
+	
+	if cantidadMercenarios != 0:
+		var salario_total = cantidadMercenarios * stats.salarioPorMercenario
+	
+		if dia % 7 == 0 and hora == 10 and minutos == 10:
+			if stats.drakmar >= salario_total:
+				stats.drakmar -= salario_total
+				System.mostrarPopUp('Se le ha pagado el salario a cada uno de los mercenarios\n Salario total pagado: ' + str(salario_total))
+			else:
+				System.retirarMercenarioAleatorio()
+
+func comprobarAburrimiento():
+	var dia = GlobalTime.TIME.dia
+	var hora = GlobalTime.TIME.hora
+	var minutos = GlobalTime.TIME.minutos
+	
+	if hora == 12 and minutos == 10:
+		for mercenario in System.SystemStats.mercenariosContratados:
+			if mercenario.stats.enMision == false:
+				mercenario.stats.aburrimiento -= 1
+		
+		for mercenario in System.SystemStats.mercenariosContratados:
+			if mercenario.stats.aburrimiento <= 0:
+				System.retirarMercenarioAburrido(mercenario.stats.id)
+				break
+
+func mostrarTutoriales():
+	var hora = GlobalTime.TIME.hora
+	var minutos = GlobalTime.TIME.minutos
+	
+	if hora == 7 and minutos == 10 and Flags.FLAGS.NuevaPartida:
+		$GUI.abrir_tutoriales()
+		Flags.FLAGS.NuevaPartida = false
 
 func _on_transeunte_generator_timer_timeout():
 	var aldeanoTranseunte = ResourceLoader.load("res://Scenes/aldeano.tscn")
@@ -141,3 +223,38 @@ func _on_auto_save_timer_timeout():
 
 func _on_nueva_mision_timer_timeout():
 	generarAldeanoConMision()
+
+func elegirClima():
+	var climas = [
+		'sol',
+		'lluvia',
+		'niebla'
+	]
+	
+	var clima = climas[randi_range(0, 2)]
+	
+	if clima == 'sol':
+		$rain.visible = false
+		$niebla_sprite.visible = false
+	elif clima == 'lluvia':
+		$rain.visible = true
+		$niebla_sprite.visible = false
+	elif clima == 'niebla':
+		$rain.visible = false
+		$niebla_sprite.visible = true
+
+func mostrarPopUp(texto:String):
+	var canvas = $PopUps
+	var popUpText = $PopUps/pop_up_bg/RichTextLabel
+	
+	popUpText.text = texto
+	canvas.visible = true
+	get_tree().paused = true
+	
+	pass
+
+func cerrarPopUp():
+	var canvas = $PopUps
+	
+	canvas.visible = false
+	get_tree().paused = false

@@ -1,5 +1,5 @@
 extends TextureRect
-@export var nombre: String
+@export var nombre: Label
 @export var expGanada: float
 @export var expInicial: float
 @export var expFinal: float
@@ -25,6 +25,7 @@ func cargar(mercenario: Mercenario, exp):
 	self.mercenario = mercenario
 	self.expGanada = exp
 	self.texture = ResourceLoader.load(mercenario.stats.retrato)
+	self.nombre.text = mercenario.stats.nombre
 	expInicial = mercenario.stats.XP
 	expFinal = expInicial + expGanada
 	actualizarXP()

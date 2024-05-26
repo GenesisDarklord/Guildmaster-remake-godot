@@ -14,3 +14,7 @@ func _on_nuevaPartida_btn_pressed() -> void:
 
 func _on_cargar_partida_btn_pressed():
 	System.cargarPartida()
+
+
+func _on_salir_btn_pressed():
+	get_tree().quit()

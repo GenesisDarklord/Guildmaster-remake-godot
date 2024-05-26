@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dssrm7r0p1a8t"]
+[gd_scene load_steps=8 format=3 uid="uid://dssrm7r0p1a8t"]
 
 [ext_resource type="Texture2D" uid="uid://cmdd4q0g1dy8d" path="res://icon.png" id="1_ss0mi"]
 [ext_resource type="Script" path="res://Scripts/resultadosDeMisionMercenarioTemplate.gd" id="2_25waf"]
 [ext_resource type="Texture2D" uid="uid://dvjwapd6dd660" path="res://TEST/lvl_up.png" id="3_db6jc"]
-[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="3_v5cwt"]
+[ext_resource type="Texture2D" uid="uid://b8be4j6vy4fhm" path="res://NewSprites/GUI.png" id="3_v5cwt"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="5_g58ku"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e7152"]
 atlas = ExtResource("3_v5cwt")
@@ -13,7 +14,7 @@ region = Rect2(1031, 208, 64, 4)
 atlas = ExtResource("3_v5cwt")
 region = Rect2(955, 272, 64, 4)
 
-[node name="mercenario" type="TextureRect" node_paths=PackedStringArray("expBar", "expGained") groups=["resultadosDeMisionMercenarioTemplate"]]
+[node name="mercenario" type="TextureRect" node_paths=PackedStringArray("nombre", "expBar", "expGained") groups=["resultadosDeMisionMercenarioTemplate"]]
 offset_left = 145.0
 offset_top = 124.0
 offset_right = 176.0
@@ -21,6 +22,7 @@ offset_bottom = 153.0
 texture = ExtResource("1_ss0mi")
 expand_mode = 1
 script = ExtResource("2_25waf")
+nombre = NodePath("nombre")
 expGanada = 130.0
 expFinal = 130.0
 expBar = NodePath("exp_bar")
@@ -41,11 +43,15 @@ texture_progress = SubResource("AtlasTexture_j6b5b")
 [node name="exp_gained" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 37.0
-offset_top = -8.0
-offset_right = 110.0
-offset_bottom = 18.0001
+offset_left = 33.0
+offset_top = -16.0
+offset_right = 122.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0.670588, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_g58ku")
+theme_override_font_sizes/font_size = 31
 text = "+ 999 XP "
+horizontal_alignment = 1
 
 [node name="lvl_up" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -55,3 +61,13 @@ offset_top = 7.0
 offset_right = 153.0
 offset_bottom = 27.0
 texture = ExtResource("3_db6jc")
+
+[node name="nombre" type="Label" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 123.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_g58ku")
+text = "FULANITO"

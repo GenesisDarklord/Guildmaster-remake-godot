@@ -11,6 +11,7 @@ func _ready():
 func list_objects():
 #	if System.SystemStats.objetosEnAlmacen.size() > 0:
 #		for objectID in System.SystemStats.objetosEnAlmacen:
+	limpiarLista()
 	for objeto in System.objetosTotales:
 		if objeto.stats.cantidad > 0:
 			var objetoInstance: ObjetoTemplate = objetoScene.instantiate()
@@ -20,6 +21,11 @@ func list_objects():
 				objetoInstance.objetoPresionado.connect(emitirReceta)
 			else:
 				objetoInstance.objetoPresionado.connect(mostrarDetalles)
+
+func limpiarLista():
+	container = $ScrollContainer/VBoxContainer
+	for item in container.get_children():
+		item.queue_free()
 
 func listAllObjects():
 	for objeto in System.objetosTotales:
@@ -47,6 +53,8 @@ func mostrarDetalles(objeto):
 		get_tree().get_nodes_in_group("panelesActivos")[0].call("mostrarDetallesObjetoPanel", objeto)
 
 func filtrarArmas():
+	list_objects()
+	
 	var list = container.get_children()
 	for element in list:
 		if element.objeto.stats.tipo != "Arma":
@@ -55,6 +63,8 @@ func filtrarArmas():
 			element.visible = true
 
 func filtrarArmaduras():
+	list_objects()
+	
 	var list = container.get_children()
 	for element in list:
 		if element.objeto.stats.tipo != "Armadura":

@@ -12,6 +12,7 @@ var detallesObjetoPanel = preload("res://Scenes/Menus/detallesObjetoPanel.tscn")
 
 @export var panelesInactivos: HBoxContainer
 @export var pauseMenu: TextureRect
+@export var close_btn: TextureButton
 signal IniciarMision(mision:Mision)
 
 
@@ -22,12 +23,14 @@ func _process(delta):
 	pass
 #-----------------PARA LAS MISIONES--------------------------
 func mostrarPanelNuevaMision(mision:Mision):
+	close_btn.visible = true
 	if $nuevaMisionPanel == null:
 		add_child(nuevaMisionPanel.instantiate())
 		$nuevaMisionPanel.call("llenarDatos", mision)
 
 func mostrarMisionesPanel():
 	cerrarPaneles()
+	close_btn.visible = true
 	if $misionesPanel == null:
 		add_child(misionesPanel.instantiate())
 		$misionesPanel.call("llenarListaMisiones")
@@ -35,6 +38,7 @@ func mostrarMisionesPanel():
 		cerrarMisionesPanel()
 
 func mostrarDetallesDeMision(mision: Mision):
+	close_btn.visible = true
 	if $detallesMisionPanel == null:
 		add_child(detallesMisionPanel.instantiate())
 		$detallesMisionPanel.call("llenarDatos", mision)
@@ -46,6 +50,7 @@ func mostrarDetallesDeMision(mision: Mision):
 #		$detallesMisionPanel.get_node("iniciarMision_btn").set("visible", true)
 
 func MostrarPanelPreparingMision(mision:Mision):
+	close_btn.visible = true
 	emit_signal("IniciarMision",mision)
 
 func iniciarMision(mision:Mision):
@@ -54,24 +59,29 @@ func iniciarMision(mision:Mision):
 #	mostrarMercenariosPanel()
 
 func cerrarMisionesPanel():
+	close_btn.visible = false
 	if $misionesPanel != null:
 		$misionesPanel.queue_free()
 
 func cerrarNuevaMisionPanel():
+	close_btn.visible = false
 	if $nuevaMisionPanel != null:
 		$nuevaMisionPanel.queue_free()
 
 func cerrarDetallesMisionPanel ():
+	close_btn.visible = false
 	if $detallesMisionPanel != null:
 		$detallesMisionPanel.queue_free()
 
 #----------------PARA LOS MERCENARIOS-------------------------
 func mostrarNuevoMercenarioPanel(mercenario: Mercenario):
+	close_btn.visible = true
 	if $nuevoMercenarioPanel == null:
 		add_child(nuevoMercenarioPanel.instantiate())
 		$nuevoMercenarioPanel.call("llenarDatos", mercenario)
 
 func mostrarDetallesMercenarioPanel(mercenario: Mercenario):
+	close_btn.visible = true
 	if $detallesMercenarioPanel == null:
 		add_child(detallesMercenarioPanel.instantiate())
 		$detallesMercenarioPanel.call("llenarDatos", mercenario)
@@ -81,6 +91,7 @@ func mostrarDetallesMercenarioPanel(mercenario: Mercenario):
 		$detallesMercenarioPanel.call("llenarDatos", mercenario)
 
 func mostrarMercenariosPanel():
+	close_btn.visible = true
 	if $mercenariosPanel == null:
 		cerrarMercenariosPanel()
 		add_child(mercenariosPanel.instantiate())
@@ -91,6 +102,8 @@ func mostrarMercenariosPanel():
 func equiparMercenario(tipo: String):
 	Flags.equipandoMercenario = true
 	
+	close_btn.visible = true
+	
 	if $almacenPanel == null:
 		mostrarAlmacenPanel()
 	
@@ -100,11 +113,13 @@ func equiparMercenario(tipo: String):
 		$almacenPanel.call("filtrarArmaduras")
 
 func cerrarNuevoMercenarioPanel():
+	close_btn.visible = false
 	if $nuevoMercenarioPanel != null:
 		$nuevoMercenarioPanel.queue_free()
 
 func cerrarDetallesMercenarioPanel():
 	Flags.equipandoMercenario = false
+	close_btn.visible = false
 	
 	if $detallesMercenarioPanel != null:
 		$detallesMercenarioPanel.queue_free()
@@ -113,6 +128,7 @@ func cerrarDetallesMercenarioPanel():
 		$almacenPanel.queue_free()
 
 func cerrarMercenariosPanel():
+	close_btn.visible = false
 	cerrarDetallesMercenarioPanel()
 	if $mercenariosPanel != null:
 		$mercenariosPanel.queue_free()
@@ -125,8 +141,10 @@ func mostrarAlmacenPanel():
 		$almacenPanel.call("list_objects")
 	else:
 		cerrarAlmacenPanel()
+	close_btn.visible = true
 
 func mostrarDetallesObjetoPanel(objeto: Objeto):
+	close_btn.visible = true
 	if $detallesObjetoPanel == null:
 		add_child(detallesObjetoPanel.instantiate())
 		$detallesObjetoPanel.call("configure", objeto)
@@ -136,12 +154,14 @@ func mostrarDetallesObjetoPanel(objeto: Objeto):
 		$detallesObjetoPanel.call("configure", objeto)
 
 func cerrarAlmacenPanel():
+	close_btn.visible = false
 	if $almacenPanel != null:
 		$almacenPanel.queue_free()
 	if $detallesObjetoPanel != null:
 		$detallesObjetoPanel.queue_free()
 
 func cerrarDetallesObjetosPanel():
+	close_btn.visible = false
 	if $detallesObjetoPanel != null:
 		$detallesObjetoPanel.queue_free()
 #----------------PARA LOS BOTONES------------------------------
@@ -168,5 +188,6 @@ func cerrarPaneles():
 	cerrarMercenariosPanel()
 	cerrarAlmacenPanel()
 	cerrarDetallesObjetosPanel()
+	close_btn.visible = false
 	Flags.preparandoMision = false
 

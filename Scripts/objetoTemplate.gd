@@ -9,8 +9,18 @@ var objeto: Objeto
 @export var nombre: Label
 
 func _on_pressed():
-	emit_signal("objetoPresionado", objeto)
+	if Flags.vendiendo:
+		vender()
+	else:
+		emit_signal("objetoPresionado", objeto)
 
+func vender():
+	var gremio_instance = get_tree().get_nodes_in_group('Gremio')[0]
+	
+	if objeto.stats.cantidad > 0:
+		gremio_instance.stats.drakmar += objeto.stats.valor
+		objeto.stats.cantidad -= 1
+		updateData()
 
 func configure(objeto: Objeto):
 	self.objeto = objeto

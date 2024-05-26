@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://yrnhlmnfj53y"]
+[gd_scene load_steps=33 format=3 uid="uid://yrnhlmnfj53y"]
 
 [ext_resource type="Script" path="res://Scripts/aldeano.gd" id="2_u40qp"]
 [ext_resource type="Texture2D" uid="uid://b4mmbk0loysd1" path="res://NewSprites/Villager/walk/walk_down1.png" id="2_vcisu"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dismrwp4sb4at" path="res://NewSprites/Villager/walk/walk_up6.png" id="23_mu85m"]
 [ext_resource type="Texture2D" uid="uid://c76atgvm04kj1" path="res://NewSprites/Villager/walk/walk_up7.png" id="24_aag11"]
 [ext_resource type="Texture2D" uid="uid://dundoc4rn5pxr" path="res://NewSprites/Villager/walk/walk_up8.png" id="25_c82to"]
+[ext_resource type="Texture2D" uid="uid://cvq5a64rigrbr" path="res://NewSprites/markers.png" id="26_nys5t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6b22o"]
 animations = [{
@@ -127,12 +128,54 @@ animations = [{
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_007go"]
 polygon = PackedVector2Array(-6, 13, 6, 13, 6, 19, -6, 19)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i05lk"]
+atlas = ExtResource("26_nys5t")
+region = Rect2(101, 7, 23, 25)
+
+[sub_resource type="Animation" id="Animation_12el3"]
+resource_name = "icon"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-11, -40), Vector2(-11, -46)]
+}
+
+[sub_resource type="Animation" id="Animation_ahr3r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-11, -40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_endiu"]
+_data = {
+"RESET": SubResource("Animation_ahr3r"),
+"icon": SubResource("Animation_12el3")
+}
+
 [node name="aldeano" type="Node2D" groups=["aldeano"]]
 script = ExtResource("2_u40qp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6b22o")
-animation = &"idle"
+animation = &"walk_right"
+frame_progress = 0.0496495
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_007go")
@@ -143,5 +186,19 @@ offset_left = -11.0
 offset_top = -18.0
 offset_right = 11.0
 offset_bottom = 20.0
+mouse_default_cursor_shape = 2
+
+[node name="icon" type="TextureButton" parent="."]
+offset_left = -11.0
+offset_top = -40.0
+offset_right = 12.0
+offset_bottom = -15.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_i05lk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_endiu")
+}
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

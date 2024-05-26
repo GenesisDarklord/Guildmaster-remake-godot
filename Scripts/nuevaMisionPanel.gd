@@ -13,6 +13,8 @@ func llenarDatos(mision: Mision):
 	$nombreLabel.text = mision.stats.nombre
 	$drakmar_text.text = str(mision.stats.drakmar)
 	$descripcion_text.text = str(mision.stats.descripcion)
+	$experiencia_text.text = str(mision.stats.XP)
+	$prestigio_text.text = str(mision.stats.prestigio)
 
 func _on_button_pressed():
 	System.aceptarMision(mision)

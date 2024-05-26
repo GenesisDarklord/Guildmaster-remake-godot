@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://cib2biql2wbek"]
+[gd_scene load_steps=32 format=3 uid="uid://cib2biql2wbek"]
 
-[ext_resource type="Script" path="res://Scripts/mercenary.gd" id="1_i8jfh"]
+[ext_resource type="Script" path="res://Scripts/mercenary.gd" id="1_3rdlx"]
 [ext_resource type="Texture2D" uid="uid://vmrtwy5rutg6" path="res://NewSprites/Rahars/walk/walk_down1.png" id="2_k0ekx"]
 [ext_resource type="Texture2D" uid="uid://dpoaxexq7p0xq" path="res://NewSprites/Rahars/walk/walk_down2.png" id="3_10nej"]
 [ext_resource type="Texture2D" uid="uid://bjah7ishklo43" path="res://NewSprites/Rahars/walk/walk_down3.png" id="4_1uh5d"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bxmdbtq1op5km" path="res://NewSprites/Rahars/walk/walk_up6.png" id="23_pm7b6"]
 [ext_resource type="Texture2D" uid="uid://dytpgwqwe0msc" path="res://NewSprites/Rahars/walk/walk_up7.png" id="24_np7ms"]
 [ext_resource type="Texture2D" uid="uid://bgfg70m7m608d" path="res://NewSprites/Rahars/walk/walk_up8.png" id="25_tct35"]
+[ext_resource type="Texture2D" uid="uid://cvq5a64rigrbr" path="res://NewSprites/markers.png" id="26_rduqt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c2ccc"]
 animations = [{
@@ -124,8 +125,49 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lam4h"]
+atlas = ExtResource("26_rduqt")
+region = Rect2(73, 9, 14, 23)
+
+[sub_resource type="Animation" id="Animation_i7qg5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, -42)]
+}
+
+[sub_resource type="Animation" id="Animation_ja5qs"]
+resource_name = "icon"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-7, -42), Vector2(-7, -46)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g0t5r"]
+_data = {
+"RESET": SubResource("Animation_i7qg5"),
+"icon": SubResource("Animation_ja5qs")
+}
+
 [node name="mercenary" type="Node2D" groups=["mercenary"]]
-script = ExtResource("1_i8jfh")
+script = ExtResource("1_3rdlx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4, 0)
@@ -138,6 +180,22 @@ offset_top = -21.0
 offset_right = 29.0
 offset_bottom = 19.0
 scale = Vector2(0.54565, 1.00636)
+mouse_default_cursor_shape = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="icon" type="TextureButton" parent="."]
+visible = false
+offset_left = -7.0
+offset_top = -42.0
+offset_right = 7.0
+offset_bottom = -19.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_lam4h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "icon"
+libraries = {
+"": SubResource("AnimationLibrary_g0t5r")
+}
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

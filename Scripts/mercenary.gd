@@ -5,12 +5,14 @@ var mercenario: Mercenario = null
 var mercenarioListo: bool = false
 var progressPath: PathFollow2D = null
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var icon: TextureButton = $icon
 var oldPos: Vector2 = Vector2(0,0)
 var direction: Vector2 = Vector2(0,0)
 
 
 func _ready():
 	oldPos = position
+	icon.visible = false
 
 func _process(delta):
 	updateDirection()
@@ -25,6 +27,7 @@ func prepararMercenario():
 	var notificationSystem: NotificationSystem = get_tree().get_nodes_in_group("notificationSystem")[0]
 	notificationSystem.addNotification(notificationSystem.Type.NEW_MERCENARY)
 	mercenarioListo = true
+	icon.visible = true
 
 func updateDirection():
 	if oldPos == position:

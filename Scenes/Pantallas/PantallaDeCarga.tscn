@@ -1,13 +1,29 @@
-[gd_scene load_steps=15 format=3 uid="uid://cs27d2hbsoxkw"]
+[gd_scene load_steps=35 format=3 uid="uid://cs27d2hbsoxkw"]
 
-[ext_resource type="Texture2D" uid="uid://wqoaohd5jk8" path="res://Sprites/GUI.png" id="1"]
 [ext_resource type="Script" path="res://Scripts/PantallaDeCarga.gd" id="1_nmyrq"]
 [ext_resource type="Texture2D" uid="uid://d2pjj2xwffea0" path="res://Sprites/Reloj de Arena/Reloj de Arena.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://ebc63jgf2u2m" path="res://Sprites/LoadingScreenBackground.png" id="3"]
-
-[sub_resource type="AtlasTexture" id="1"]
-atlas = ExtResource("1")
-region = Rect2(4, 116, 67, 16)
+[ext_resource type="Texture2D" uid="uid://c6d2elbetpdgj" path="res://NewSprites/loading/loading1.png" id="4_syhwp"]
+[ext_resource type="Texture2D" uid="uid://c0h1ucd8w262o" path="res://NewSprites/loading/loading2.png" id="5_qcrdp"]
+[ext_resource type="Texture2D" uid="uid://ncg5g4fiirpc" path="res://NewSprites/loading/loading3.png" id="6_8pncr"]
+[ext_resource type="Texture2D" uid="uid://brgpmc83jmaa1" path="res://NewSprites/loading/loading4.png" id="7_i7uv7"]
+[ext_resource type="Texture2D" uid="uid://qv8h65c5ajev" path="res://NewSprites/loading/loading5.png" id="8_22785"]
+[ext_resource type="Texture2D" uid="uid://diqyx2lyy33rg" path="res://NewSprites/loading/loading6.png" id="9_ind4y"]
+[ext_resource type="Texture2D" uid="uid://8c0ker5hv8ra" path="res://NewSprites/loading/loading7.png" id="10_cqdys"]
+[ext_resource type="Texture2D" uid="uid://coqix627a5v35" path="res://NewSprites/loading/loading8.png" id="11_rv8am"]
+[ext_resource type="Texture2D" uid="uid://cslarw4ysr1iq" path="res://NewSprites/loading/loading9.png" id="12_1oj4b"]
+[ext_resource type="Texture2D" uid="uid://nuehqwouvc05" path="res://NewSprites/loading/loading10.png" id="13_bk3sr"]
+[ext_resource type="Texture2D" uid="uid://icvcs4c0l7mc" path="res://NewSprites/loading/loading11.png" id="14_fihxc"]
+[ext_resource type="Texture2D" uid="uid://dfnlrb4hvpon4" path="res://NewSprites/loading/loading12.png" id="15_qvtmw"]
+[ext_resource type="Texture2D" uid="uid://ccu2u0s53bf7y" path="res://NewSprites/loading/loading13.png" id="16_fnu0o"]
+[ext_resource type="Texture2D" uid="uid://cpluumlto4vuv" path="res://NewSprites/loading/loading14.png" id="17_xnj2w"]
+[ext_resource type="Texture2D" uid="uid://bf0728tbd4jhj" path="res://NewSprites/loading/loading15.png" id="18_ca63c"]
+[ext_resource type="Texture2D" uid="uid://cleah4n1nvllw" path="res://NewSprites/loading/loading16.png" id="19_dd1rr"]
+[ext_resource type="Texture2D" uid="uid://htqbtsr8qtbq" path="res://NewSprites/loading/loading17.png" id="20_neu8a"]
+[ext_resource type="Texture2D" uid="uid://doruyqojqygsl" path="res://NewSprites/loading/loading18.png" id="21_r2qjy"]
+[ext_resource type="Texture2D" uid="uid://bhvn6mwjh0okj" path="res://NewSprites/loading/loading19.png" id="22_kjmnt"]
+[ext_resource type="Texture2D" uid="uid://h33hhgr6ag36" path="res://NewSprites/loading/loading20.png" id="23_32mor"]
+[ext_resource type="Texture2D" uid="uid://b6uktxbppnobf" path="res://NewSprites/loading/loading21.png" id="24_f8iis"]
 
 [sub_resource type="AtlasTexture" id="2"]
 atlas = ExtResource("2")
@@ -73,6 +89,77 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_8m1o5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_syhwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qcrdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8pncr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i7uv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_22785")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ind4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cqdys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rv8am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1oj4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bk3sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fihxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qvtmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fnu0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xnj2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ca63c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_dd1rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_neu8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_r2qjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kjmnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_32mor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_f8iis")
+}],
+"loop": true,
+"name": &"loading",
+"speed": 20.0
+}]
+
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
 layer = 7
@@ -102,16 +189,15 @@ offset_bottom = -33.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="Loading"]
-layout_mode = 0
-offset_left = -4.0
-offset_top = -2.0
-offset_right = 63.0
-offset_bottom = 14.0
-texture = SubResource("1")
-
 [node name="sandClock" type="AnimatedSprite2D" parent="Loading"]
 position = Vector2(-21, 8)
 sprite_frames = SubResource("10")
 frame = 4
 frame_progress = 0.0398325
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Loading"]
+position = Vector2(26, 10)
+sprite_frames = SubResource("SpriteFrames_8m1o5")
+animation = &"loading"
+autoplay = "loading"
+frame_progress = 0.709688

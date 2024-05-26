@@ -1,17 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvx3xlgxvimps"]
+[gd_scene load_steps=9 format=3 uid="uid://bvx3xlgxvimps"]
 
-[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_a7k0c"]
+[ext_resource type="Texture2D" uid="uid://b8be4j6vy4fhm" path="res://NewSprites/GUI.png" id="1_a7k0c"]
 [ext_resource type="Script" path="res://Scripts/resultadosDeMisionObjetoTemplate.gd" id="2_nrsqd"]
 [ext_resource type="Texture2D" uid="uid://cmxyabydxfvaq" path="res://NewSprites/materials.png" id="2_yajfc"]
 [ext_resource type="Texture2D" uid="uid://wug53li7gjyh" path="res://NewSprites/equipment.png" id="3_5l18n"]
 [ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="4_u228m"]
+[ext_resource type="Texture2D" uid="uid://d2xgkduhlp40y" path="res://NewSprites/GUI_old.png" id="5_mre0a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lm7fw"]
 atlas = ExtResource("1_a7k0c")
 region = Rect2(1216, 321, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjrdu"]
-atlas = ExtResource("1_a7k0c")
+atlas = ExtResource("5_mre0a")
 region = Rect2(981, 344, 20, 9)
 
 [node name="resultadosDeMisionObjetoTemplate" type="TextureRect"]

@@ -5,6 +5,7 @@ signal salirGremio
 signal menuPrincipal
 signal abrirHerreria
 signal abrirMercado
+signal abrirTutoriales
 
 func entrar_gremio():
 	emit_signal("entrarGremio") 
@@ -20,3 +21,12 @@ func abrir_herreria():
 
 func abrir_mercado():
 	emit_signal("abrirMercado")
+
+func abrir_tutoriales():
+	emit_signal("abrirTutoriales")
+
+func mostrarPanelPreparingMision(mision: Mision):
+	$PreparingMisionPanel.MostrarPanel(mision)
+
+func _on_button_pressed():
+	System.mostrarPopUp("TEXTO DE PRUEBA")

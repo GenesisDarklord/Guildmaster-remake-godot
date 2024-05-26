@@ -17,12 +17,106 @@ var SystemStats = { #Diccionario Para los stats del system
 }
 
 var nombresMercenarios = [#contiene nombres por defecto de mercenarios
-	"Genesis",
-	"Lahars",
-	"LNG2000",
-	"PolariSystem",
-	"Killy",
-	"Ramoneitor"
+	"Aldric el Valiente",
+	"Baldwin el Justo",
+	"Cedric el Sabio",
+	"Dunstan el Fuerte",
+	"Eadric el Honrado",
+	"Folke el Audaz",
+	"Godric el Leal",
+	"Harold el Gallardo",
+	"Ivor el Intrepido",
+	"Jarl el Noble",
+	"Kendrick el Fiel",
+	"Leofric el Magnifico",
+	"Merrick el Resuelto",
+	"Nigel el Tenaz",
+	"Osric el Valeroso",
+	"Percival el Virtuoso",
+	"Quinlan el Firme",
+	"Rowan el Poderoso",
+	"Sigurd el Heroico",
+	"Torsten el Invencible",
+	"Ulric el Defensor",
+	"Vance el Vigoroso",
+	"Walden el Guerrero",
+	"Xander el Protector",
+	"Yorick el Incansable",
+	"Zephyr el Sereno",
+	"Alaric el Respetado",
+	"Bertram el Admirado",
+	"Cyril el Amado",
+	"Devon el Digno",
+	"Egbert el Eminente",
+	"Farrell el Famoso",
+	"Gareth el Glorioso",
+	"Hadrian el Honorable",
+	"Irvine el Ilustre",
+	"Jarvis el Jubiloso",
+	"Kester el Conocido",
+	"Lionel el Lider",
+	"Mervyn el Majestuoso",
+	"Neville el Notable",
+	"Orson el Orgulloso",
+	"Preston el Poderoso",
+	"Quentin el Querido",
+	"Rufus el Respetable",
+	"Sylvester el Sobresaliente",
+	"Tristan el Triunfante",
+	"Upton el Unico",
+	"Vaughn el Victorioso",
+	"Wilfred el Sabio",
+	"Xavier el Excelente",
+	"Yale el Valiente",
+	"Zane el Zeloso",
+	"Alban el Astuto",
+	"Basil el Bravo",
+	"Clarence el Cortes",
+	"Dexter el Decidido",
+	"Edmund el Elegante",
+	"Fergus el Feroz",
+	"Gideon el Generoso",
+	"Horace el Honesto",
+	"Isaac el Inspirador",
+	"Julian el Justo",
+	"Kingsley el Amable",
+	"Luther el Leal",
+	"Milton el Magnanimo",
+	"Nolan el Noble",
+	"Oswald el Observador",
+	"Paxton el Pacifico",
+	"Quincy el Querido",
+	"Roland el Resiliente",
+	"Simeon el Serio",
+	"Thaddeus el Pensador",
+	"Ulysses el Util",
+	"Vernon el Valiente",
+	"Winston el Sabio",
+	"Xerxes el Extraordinario",
+	"Yardley el Joven",
+	"Zebulon el Zeloso",
+	"Archer el Astuto",
+	"Baxter el Bravo",
+	"Chester el Cortes",
+	"Dexter el Decidido",
+	"Elmer el Elegante",
+	"Fletcher el Feroz",
+	"Grover el Generoso",
+	"Homer el Honesto",
+	"Irving el Inspirador",
+	"Jasper el Justo",
+	"Keaton el Amable",
+	"Lester el Leal",
+	"Milton el Magnanimo",
+	"Nester el Noble",
+	"Orville el Observador",
+	"Porter el Pacifico",
+	"Quiller el Querido",
+	"Ryder el Resiliente",
+	"Sawyer el Serio",
+	"Thatcher el Pensador",
+	"Ulmer el Util",
+	"Verner el Valiente"
 ]
 var ConsoleEnabled = true #para activar o desactivar la consola
 
@@ -101,7 +195,7 @@ func cargarPartida():
 			i+=1
 		
 		for mercenario in saveData.SystemStats.mercenariosContratados:
-			var mercenarioInstance = Mercenario.new(null,null,null,null,null)#Para cargar los mercenarios como estaban antes primero hay que crear mercenarios vaicio y luego se les sobreescriben sus stats
+			var mercenarioInstance = Mercenario.new(null,null,null,null,null, null)#Para cargar los mercenarios como estaban antes primero hay que crear mercenarios vaicio y luego se les sobreescriben sus stats
 			mercenarioInstance.stats = mercenario.duplicate()#Se sobreescriben las stats del mercenario que se acaba de crear
 			mercenariosContratados.append(mercenarioInstance)
 		saveData.SystemStats.mercenariosContratados = mercenariosContratados.duplicate()
@@ -201,8 +295,11 @@ func generarMercenarioNuevo():
 	var rango = randi_range(1,10)
 	var ataque = randi_range(10,20)
 	var defensa = randi_range(5,10)
+	var claseIndex = randi_range(0, 3)
+	var clasesNames = ['Guerrero', 'Mago', 'Ladron', 'Monje']
+	var clase = clasesNames[claseIndex]
 	
-	return Mercenario.new(id, nombre,rango,ataque,defensa)
+	return Mercenario.new(id, nombre,rango,ataque,defensa, clase)
 
 func generarID():
 	return randi_range(0, 1000000000000000)
@@ -215,12 +312,21 @@ func nuevaMision():
 
 #acepta la mision mostrada y la agruega al pozo de misiones aceptadas
 func aceptarMision(mision: Mision):
-	SystemStats.misionesAceptadas.append(mision.stats.id)
-	misionesDisponibles.erase(mision)
+	var gremio_instance = get_tree().get_nodes_in_group('Gremio')[0]
+	if gremio_instance.stats.cantMisionesAceptadas < gremio_instance.stats.maxCantMisiones:
+		SystemStats.misionesAceptadas.append(mision.stats.id)
+		misionesDisponibles.erase(mision)
+	else:
+		mostrarPopUp("No es posible aceptar mision, excedido el limite de misiones")
 
 #recluta el mercenario enviendolo al pozo de mercenarios contratados
 func reclutarMercenario(mercenario:Mercenario):
-	SystemStats.mercenariosContratados.append(mercenario)
+	var gremio_instance = get_tree().get_nodes_in_group('Gremio')[0]
+	
+	if SystemStats.mercenariosContratados.size() < gremio_instance.stats.maxCantMercenarios:
+		SystemStats.mercenariosContratados.append(mercenario)
+	else:
+		mostrarPopUp("No es posible contratar Mercenario, excedido el limite de mercenarios")
 
 #Inicia la mision con los mercenarios seleccionados
 func iniciarMision(mision:Mision):
@@ -230,6 +336,7 @@ func iniciarMision(mision:Mision):
 	for mercenarioID in mision.stats.mercenariosAsignados:
 		var mercenario = buscarMercenarioPorId(mercenarioID)
 		mercenario.stats.enMision = true
+		mercenario.stats.aburrimiento = 10
 		SystemStats.mercenariosEnMision.append(mercenario.stats.id)
 
 func cumplirMision(mision: Mision):
@@ -242,15 +349,12 @@ func cumplirMision(mision: Mision):
 		SystemStats.mercenariosEnMision.erase(mercenarioID)
 		buscarMercenarioPorId(mercenarioID).stats.enMision = false
 	
-	get_tree().get_nodes_in_group("panelesActivos")[0].mostrarMisionesPanel()
+#	get_tree().get_nodes_in_group("panelesActivos")[0].mostrarMisionesPanel()
 	get_tree().get_nodes_in_group("resultadosDeMision")[0].mostrarMisionCumplida(mision)
 	
 	for mercenarioID in mision.stats.mercenariosAsignados:#Suma la experiencia de la mision y sube de nivel al mercenario si es necesario
 		var mercenario = buscarMercenarioPorId(mercenarioID)
-		mercenario.stats.XP += mision.stats.XP
-		while mercenario.stats.XP >=100:
-			mercenario.stats.XP -= 100
-			mercenario.stats.rango += 1
+		mercenario.ganarXP(mision.stats.XP)
 	
 	mision.stats.mercenariosAsignados = [] #se vacia el array de mercenarios enviados
 
@@ -265,8 +369,8 @@ func fallarMision(mision:Mision):
 	
 	mision.stats.mercenariosAsignados = [] # se vacia el array de mercenarios enviados
 	
-	get_tree().get_nodes_in_group("panelesActivos")[0].mostrarMisionesPanel()
-	get_tree().get_nodes_in_group("resultadosDeMision")[0].mostrarMisionFallida()
+#	get_tree().get_nodes_in_group("panelesActivos")[0].mostrarMisionesPanel()
+	get_tree().get_nodes_in_group("resultadosDeMision")[0].mostrarMisionFallida(mision)
 
 func adquirirObjeto(objeto, cantidad):
 	SystemStats.objetosEnAlmacen.append(objeto.stats.id)
@@ -313,6 +417,9 @@ func buscarObjetoPorNombre(nombre):
 func prepararDiccionarioDeGuardado():
 	SystemStats.misionesAceptadas.append(arrayToString(SystemStats.misionesAceptadas))
 
+func mostrarPopUp(texto: String):
+	get_tree().get_nodes_in_group('Gremio')[0].call('mostrarPopUp', texto)
+
 #Convierte un arreglo de objetos en uno de Strings
 func arrayToString(arr: Array):
 	var result = []
@@ -333,18 +440,41 @@ func changeScene(path):
 	get_node("/root/PantallaDeCarga").visible = false
 
 func nuevaPartida():
+	Flags.FLAGS.NuevaPartida = true
 	reset()
 	await changeScene("res://Scenes/Pantallas/Gremio.tscn")
 	get_tree().get_nodes_in_group("cinematica")[0].play("inicio")
 
 func pasarDia(): 
 	#Se usa para cuando termine el dia y actualizar los dias restantes de las misiones
-	get_tree().get_nodes_in_group("cinematica")[0].play("pasarDia")
 	GlobalTime.pasarDia()
+	var dia = GlobalTime.TIME.dia
+	var mes = GlobalTime.TIME.mes
+	get_tree().get_nodes_in_group("cinematica")[0].play("pasarDia")
+	
 	for mision in misionesTotales:
 		if mision.stats.enCurso and mision.stats.diasRestantes > 0:
 			mision.stats.diasRestantes -= 1
 
+func retirarMercenarioAleatorio():
+	var indice_aleatorio = randi_range(0, SystemStats.mercenariosContratados.size() - 1)
+	while true:
+		if SystemStats.mercenariosContratados[indice_aleatorio].stats.enMision:
+			indice_aleatorio = randi_range(0, SystemStats.mercenariosContratados.size())
+		else:
+			break
+	
+	var nombre = SystemStats.mercenariosContratados[indice_aleatorio].stats.nombre
+	mostrarPopUp("Se ha marchado el mercenario " + nombre + " debido a que no has podido pagarle su salario")
+	SystemStats.mercenariosContratados.remove_at(indice_aleatorio)
+
+func retirarMercenarioAburrido(mercenarioID):
+	var nombre = buscarMercenarioPorId(mercenarioID).stats.nombre
+	
+	mostrarPopUp("Se ha marchado el mercenario " + nombre + " debido a que no lo envias a misiones regularmente y se canso de esperar")
+	
+	SystemStats.mercenariosContratados.erase(buscarMercenarioPorId(mercenarioID))
+	
 func reset():
 	GlobalTime.reset()
 	objetosTotales = [] # base de datos de los objetos

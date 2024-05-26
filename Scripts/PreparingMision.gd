@@ -39,7 +39,15 @@ func ActualizarAnguloBalanza():
 	for mercenarioID in mision.stats.mercenariosAsignados:
 		sumaAtaques += System.buscarMercenarioPorId(mercenarioID).stats.ataque
 	
-	var angulo = sumaAtaques - mision.stats.XP
+	var XP = mision.stats.XP
+	var angulo = sumaAtaques - XP
+	var div = float(sumaAtaques) / float(XP)
+	var porciento = int(div * 100)
+	
+	if porciento > 100:
+		porciento = 100
+	
+	$porciento_exito.text = str(porciento) + "%"
 	
 	if angulo > 25:
 		angulo = 25

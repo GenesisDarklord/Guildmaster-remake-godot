@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sbujq"]
 atlas = ExtResource("1_q7cop")
-region = Rect2(736, 224, 112, 32)
+region = Rect2(464, 224, 112, 32)
 
 [node name="mercenarioTemplate" type="TextureButton"]
 texture_filter = 1

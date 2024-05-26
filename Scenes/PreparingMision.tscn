@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bppq6xmpm24dc"]
+[gd_scene load_steps=13 format=3 uid="uid://bppq6xmpm24dc"]
 
 [ext_resource type="Script" path="res://Scripts/PreparingMision.gd" id="1_e66jx"]
-[ext_resource type="PackedScene" uid="uid://devbqtiyxyjvj" path="res://Scenes/Menus/detallesMisionPanel.tscn" id="1_ucwai"]
+[ext_resource type="PackedScene" uid="uid://clj58sdlgehjy" path="res://Scenes/Menus/detallesMisionPanel.tscn" id="1_ucwai"]
 [ext_resource type="PackedScene" uid="uid://ddxl6wsmou5do" path="res://Scenes/Menus/mercenariosPanel.tscn" id="2_u8sc0"]
 [ext_resource type="Texture2D" uid="uid://ckaiqxnec06kq" path="res://TEST/balanza.png" id="3_ehl8j"]
+[ext_resource type="FontFile" uid="uid://bv8fe2b6ni5fa" path="res://Fonts/m3x6.ttf" id="5_l4twi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odf8w"]
 atlas = ExtResource("3_ehl8j")
@@ -46,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Balanza"]
 position = Vector2(197, 126)
@@ -101,6 +103,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="detallesMisionPanel" parent="." instance=ExtResource("1_ucwai")]
 layout_mode = 1
@@ -116,5 +119,21 @@ offset_left = 349.0
 offset_top = -57.85
 offset_right = 349.0
 offset_bottom = 160.15
+
+[node name="porciento_exito" type="Label" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 50.0
+offset_right = 293.0
+offset_bottom = 101.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_l4twi")
+theme_override_font_sizes/font_size = 60
+text = "100%"
 
 [connection signal="pressed" from="blankSpaceButton" to="." method="CerrarPanel"]

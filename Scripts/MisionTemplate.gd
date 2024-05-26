@@ -22,10 +22,17 @@ func _on_pressed():
 		completarMision()
 
 func completarMision():
+	var sumaStats = 0
+	
+	for mercenarioID in mision.stats.mercenriosAsignados:
+		sumaStats += System.buscarMercenarioPorId(mercenarioID).stats.ataque
+	
 	var num = randi_range(0, 100)
-	if mision.stats.mercenariosAsignados.size() == 4:
-		num = 100
-	if num > 50:
+	var XP = mision.stats.XP
+	var div = float(sumaStats) / float(XP)
+	var porciento = int(div * 100)
+	
+	if num < porciento:
 		System.cumplirMision(mision)
-	if num <= 50:
+	if num > porciento:
 		System.fallarMision(mision)

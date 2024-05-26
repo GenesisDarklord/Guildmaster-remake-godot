@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d333wqgv4loe8"]
 
-[ext_resource type="Texture2D" uid="uid://cjt1fes7q27t4" path="res://NewSprites/GUI.png" id="1_hbc60"]
+[ext_resource type="Texture2D" uid="uid://b8be4j6vy4fhm" path="res://NewSprites/GUI.png" id="1_hbc60"]
 [ext_resource type="Script" path="res://Scripts/almacenPanel.gd" id="2_uu5j4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1t065"]

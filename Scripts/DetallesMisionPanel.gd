@@ -25,6 +25,8 @@ func llenarDatos(mision: Mision):
 	$nombre_text.text = mision.stats.nombre
 	$drakmar_text.text = str(mision.stats.drakmar)
 	$descripcion_text.text = str(mision.stats.descripcion)
+	$experiencia_text.text = str(mision.stats.XP)
+	$prestigio_text.text = str(mision.stats.prestigio)
 	
 	if System.SystemStats.misionesEnCurso.find(mision.stats.id) != -1:
 		$enviar_btn.set("visible", false)
