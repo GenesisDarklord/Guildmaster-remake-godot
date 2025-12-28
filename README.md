@@ -1,2 +1,2 @@
 # Guildmaster
-- Used to be basic game project using godot engine
+- Used to be the my final project or thesis, to graduate from university.
